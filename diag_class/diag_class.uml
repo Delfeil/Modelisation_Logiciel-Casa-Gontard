@@ -1,6 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_mUoS0O2nEeiTsoQB8G7nfg" name="diag_class">
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_mUoS0O2nEeiTsoQB8G7nfg" name="diag_class" visibility="protected">
   <packageImport xmi:type="uml:PackageImport" xmi:id="_mcZuwO2nEeiTsoQB8G7nfg">
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_6GessO2nEeiTsoQB8G7nfg" name="Client" visibility="public" isAbstract="true">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_cZp6oO2rEeiTsoQB8G7nfg" name="comptes" visibility="protected"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_S_SAAO2tEeiTsoQB8G7nfg" name="nom" visibility="protected">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_aNFqgO2tEeiTsoQB8G7nfg" name="adressePost" visibility="protected">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_g7YHcO2tEeiTsoQB8G7nfg" name="adressMail" visibility="protected">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_kCnlMO2tEeiTsoQB8G7nfg" name="numTel" visibility="protected">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_wMdr4O2tEeiTsoQB8G7nfg" name="comptebanquaire" type="_tmPQgO2tEeiTsoQB8G7nfg" aggregation="shared" association="_wMaokO2tEeiTsoQB8G7nfg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wMh9UO2tEeiTsoQB8G7nfg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wMh9Ue2tEeiTsoQB8G7nfg" value="*"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_I5N5gO2uEeiTsoQB8G7nfg" name="ajoutCompte" concurrency="guarded">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_qoJ5UO2uEeiTsoQB8G7nfg" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Eyme4O2tEeiTsoQB8G7nfg"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_tmPQgO2tEeiTsoQB8G7nfg" name="CompteBanquaire"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_wMaokO2tEeiTsoQB8G7nfg" memberEnd="_wMdr4O2tEeiTsoQB8G7nfg _wMikYO2tEeiTsoQB8G7nfg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wMbPoO2tEeiTsoQB8G7nfg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_wMdE0O2tEeiTsoQB8G7nfg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_wMikYO2tEeiTsoQB8G7nfg" name="client" type="_6GessO2nEeiTsoQB8G7nfg" association="_wMaokO2tEeiTsoQB8G7nfg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_xBFKQO2uEeiTsoQB8G7nfg" name="clientPhysique">
+    <generalization xmi:type="uml:Generalization" xmi:id="_8VNJ4O2uEeiTsoQB8G7nfg" general="_6GessO2nEeiTsoQB8G7nfg"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_XQS3UO2vEeiTsoQB8G7nfg" name="dateNaissance" visibility="protected">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ADXg4-2zEeiTsoQB8G7nfg" name="etat" type="_ZXNOkO2xEeiTsoQB8G7nfg" association="_ADXg4O2zEeiTsoQB8G7nfg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ADgDwO2zEeiTsoQB8G7nfg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ADgDwe2zEeiTsoQB8G7nfg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_XnyNcu2zEeiTsoQB8G7nfg" name="client" type="_6GessO2nEeiTsoQB8G7nfg" association="_XnpDgO2zEeiTsoQB8G7nfg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Xny0gO2zEeiTsoQB8G7nfg"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Xny0ge2zEeiTsoQB8G7nfg" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_G1TEgO2vEeiTsoQB8G7nfg" name="ClientMoral" visibility="public">
+    <generalization xmi:type="uml:Generalization" xmi:id="_P0tPgO2vEeiTsoQB8G7nfg" general="_6GessO2nEeiTsoQB8G7nfg"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_mUEYgO2vEeiTsoQB8G7nfg" name="numSiret">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_EiqeEu2wEeiTsoQB8G7nfg" name="clientphysique" type="_xBFKQO2uEeiTsoQB8G7nfg" aggregation="shared" association="_Eip3AO2wEeiTsoQB8G7nfg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EirFIO2wEeiTsoQB8G7nfg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EirFIe2wEeiTsoQB8G7nfg" value="*"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Eip3AO2wEeiTsoQB8G7nfg" memberEnd="_EiqeEu2wEeiTsoQB8G7nfg _EirFIu2wEeiTsoQB8G7nfg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_EiqeEO2wEeiTsoQB8G7nfg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_EiqeEe2wEeiTsoQB8G7nfg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_EirFIu2wEeiTsoQB8G7nfg" name="clientmoral" type="_G1TEgO2vEeiTsoQB8G7nfg" association="_Eip3AO2wEeiTsoQB8G7nfg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ZXNOkO2xEeiTsoQB8G7nfg" name="Etat" isAbstract="true">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_7TCa4O2xEeiTsoQB8G7nfg" name="retirer"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_mZDe0O2yEeiTsoQB8G7nfg" name="moins10Ans">
+    <generalization xmi:type="uml:Generalization" xmi:id="_6BYJQO2yEeiTsoQB8G7nfg" general="_ZXNOkO2xEeiTsoQB8G7nfg"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_6DSYUO2zEeiTsoQB8G7nfg" name="retirer"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_rVe8kO2yEeiTsoQB8G7nfg" name="entre10Et18Ans">
+    <generalization xmi:type="uml:Generalization" xmi:id="_2sxk8O2yEeiTsoQB8G7nfg" general="_ZXNOkO2xEeiTsoQB8G7nfg"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_7zoUkO2zEeiTsoQB8G7nfg" name="retirer"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_zFxpEO2yEeiTsoQB8G7nfg" name="plus18">
+    <generalization xmi:type="uml:Generalization" xmi:id="_4BU9EO2yEeiTsoQB8G7nfg" general="_ZXNOkO2xEeiTsoQB8G7nfg"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_-APWEO2zEeiTsoQB8G7nfg" name="retirer"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ADXg4O2zEeiTsoQB8G7nfg" visibility="protected" memberEnd="_ADXg4-2zEeiTsoQB8G7nfg _ADgDwu2zEeiTsoQB8G7nfg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ADXg4e2zEeiTsoQB8G7nfg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ADXg4u2zEeiTsoQB8G7nfg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_ADgDwu2zEeiTsoQB8G7nfg" name="clientphysique" type="_xBFKQO2uEeiTsoQB8G7nfg" association="_ADXg4O2zEeiTsoQB8G7nfg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_XnpDgO2zEeiTsoQB8G7nfg" name="tuteur" visibility="protected" memberEnd="_XnyNcu2zEeiTsoQB8G7nfg _XnzbkO2zEeiTsoQB8G7nfg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_XnyNcO2zEeiTsoQB8G7nfg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_XnyNce2zEeiTsoQB8G7nfg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_XnzbkO2zEeiTsoQB8G7nfg" name="clientphysique" type="_xBFKQO2uEeiTsoQB8G7nfg" association="_XnpDgO2zEeiTsoQB8G7nfg"/>
+  </packagedElement>
 </uml:Model>
