@@ -36,6 +36,10 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_8D7OwPNjEeihoL2BMpC4vw" name="montantDecouver" visibility="protected">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_5bswQPpeEeibBvhereyb1Q" name="cartebancaire" type="__dNV0PpVEeibBvhereyb1Q" aggregation="composite" association="_5briIPpeEeibBvhereyb1Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5bswQfpeEeibBvhereyb1Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5bswQvpeEeibBvhereyb1Q" value="1"/>
+    </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_wPxYwPpJEeibBvhereyb1Q" name="ajoutArgent">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_8rM-sPpJEeibBvhereyb1Q" name="montant">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
@@ -50,7 +54,7 @@
       </ownedParameter>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_JxCMgPpKEeibBvhereyb1Q" name="consulterSolde">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_N0vSgPpKEeibBvhereyb1Q" name="solde" direction="out">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_N0vSgPpKEeibBvhereyb1Q" name="solde" direction="return">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
       </ownedParameter>
     </ownedOperation>
@@ -74,16 +78,22 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Xny0gO2zEeiTsoQB8G7nfg"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Xny0ge2zEeiTsoQB8G7nfg" value="1"/>
     </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_zI51IPphEeibBvhereyb1Q" name="ajoutCompte" concurrency="guarded">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_zI51IfphEeibBvhereyb1Q" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_G1TEgO2vEeiTsoQB8G7nfg" name="ClientMoral" visibility="public">
     <generalization xmi:type="uml:Generalization" xmi:id="_P0tPgO2vEeiTsoQB8G7nfg" general="_6GessO2nEeiTsoQB8G7nfg"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_mUEYgO2vEeiTsoQB8G7nfg" name="numSiret">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_mUEYgO2vEeiTsoQB8G7nfg" name="numSiret" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_EiqeEu2wEeiTsoQB8G7nfg" name="clientphysique" type="_xBFKQO2uEeiTsoQB8G7nfg" aggregation="shared" association="_Eip3AO2wEeiTsoQB8G7nfg">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EirFIO2wEeiTsoQB8G7nfg" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EirFIe2wEeiTsoQB8G7nfg" value="*"/>
     </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_zSWsEPphEeibBvhereyb1Q" name="ajoutCompte" concurrency="guarded">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_zSWsEfphEeibBvhereyb1Q" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_Eip3AO2wEeiTsoQB8G7nfg" memberEnd="_EiqeEu2wEeiTsoQB8G7nfg _EirFIu2wEeiTsoQB8G7nfg">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_EiqeEO2wEeiTsoQB8G7nfg" source="org.eclipse.papyrus">
@@ -118,5 +128,61 @@
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_XnzbkO2zEeiTsoQB8G7nfg" name="clientphysique" type="_xBFKQO2uEeiTsoQB8G7nfg" association="_XnpDgO2zEeiTsoQB8G7nfg"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="__dNV0PpVEeibBvhereyb1Q" name="CarteBancaire" visibility="private" isAbstract="true"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="__dNV0PpVEeibBvhereyb1Q" name="CarteBancaire" visibility="public" isAbstract="true">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_cuAx4PpgEeibBvhereyb1Q" name="retirer" visibility="protected" concurrency="guarded">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_oS9bwPpgEeibBvhereyb1Q" name="montant">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_roIAwPpgEeibBvhereyb1Q" name="montantRetire" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_wlZzEPpgEeibBvhereyb1Q" name="ValiderRetrait" visibility="protected">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_6wg8MPpgEeibBvhereyb1Q" name="valide" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_5briIPpeEeibBvhereyb1Q" memberEnd="_5bswQPpeEeibBvhereyb1Q _5bswQ_peEeibBvhereyb1Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5bsJMPpeEeibBvhereyb1Q" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5bsJMfpeEeibBvhereyb1Q" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_5bswQ_peEeibBvhereyb1Q" name="comptebanquaire" type="_tmPQgO2tEeiTsoQB8G7nfg" association="_5briIPpeEeibBvhereyb1Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_KLnYQPphEeibBvhereyb1Q" name="CarteDebit">
+    <generalization xmi:type="uml:Generalization" xmi:id="_OWW6YPphEeibBvhereyb1Q" general="__dNV0PpVEeibBvhereyb1Q"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Yb4Y4PphEeibBvhereyb1Q" name="periodeDebit" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_w4re8PphEeibBvhereyb1Q" name="retirer" visibility="public" concurrency="guarded">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_w4re8fphEeibBvhereyb1Q" name="montant">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_w4re8vphEeibBvhereyb1Q" name="montantRetire" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_xi0BEPphEeibBvhereyb1Q" name="ValiderRetrait" visibility="protected">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_xi0BEfphEeibBvhereyb1Q" name="valide" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_8LsEQPphEeibBvhereyb1Q" name="CarteCredit">
+    <generalization xmi:type="uml:Generalization" xmi:id="_VRRBkPpiEeibBvhereyb1Q" general="__dNV0PpVEeibBvhereyb1Q"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_FvwbgPpiEeibBvhereyb1Q" name="Plafond" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_TQx7EPpjEeibBvhereyb1Q" name="CarteFactory">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_AYETMPpkEeibBvhereyb1Q" name="getCarte">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_bBwHkPpkEeibBvhereyb1Q" name="type">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_f3_dwPpkEeibBvhereyb1Q" type="__dNV0PpVEeibBvhereyb1Q" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_th4a4PpkEeibBvhereyb1Q" name="create" client="_TQx7EPpjEeibBvhereyb1Q" supplier="_KLnYQPphEeibBvhereyb1Q"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_wQy4MPpkEeibBvhereyb1Q" name="create" client="_TQx7EPpjEeibBvhereyb1Q" supplier="_8LsEQPphEeibBvhereyb1Q"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_z7tqwPpkEeibBvhereyb1Q" client="_tmPQgO2tEeiTsoQB8G7nfg" supplier="_TQx7EPpjEeibBvhereyb1Q"/>
 </uml:Model>
