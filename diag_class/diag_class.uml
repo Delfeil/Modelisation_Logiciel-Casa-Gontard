@@ -40,6 +40,10 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5bswQfpeEeibBvhereyb1Q"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5bswQvpeEeibBvhereyb1Q" value="1"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ypLHAPpzEeibBvhereyb1Q" name="memento" type="_uYSgoPpzEeibBvhereyb1Q" association="_ypJR0PpzEeibBvhereyb1Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ypLuEPpzEeibBvhereyb1Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ypMVIPpzEeibBvhereyb1Q" value="1"/>
+    </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_wPxYwPpJEeibBvhereyb1Q" name="ajoutArgent">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_8rM-sPpJEeibBvhereyb1Q" name="montant">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
@@ -57,6 +61,10 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_N0vSgPpKEeibBvhereyb1Q" name="solde" direction="return">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
       </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_m5QGwPp0EeibBvhereyb1Q" name="saveState"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_0ER9oPp0EeibBvhereyb1Q" name="getState">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_49qHYPp0EeibBvhereyb1Q" name="etat" type="_uYSgoPpzEeibBvhereyb1Q" direction="return"/>
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_wMaokO2tEeiTsoQB8G7nfg" memberEnd="_wMdr4O2tEeiTsoQB8G7nfg _wMikYO2tEeiTsoQB8G7nfg">
@@ -129,6 +137,10 @@
     <ownedEnd xmi:type="uml:Property" xmi:id="_XnzbkO2zEeiTsoQB8G7nfg" name="clientphysique" type="_xBFKQO2uEeiTsoQB8G7nfg" association="_XnpDgO2zEeiTsoQB8G7nfg"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="__dNV0PpVEeibBvhereyb1Q" name="CarteBancaire" visibility="public" isAbstract="true">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_yzs9AvpoEeibBvhereyb1Q" name="reseau" type="_54fD0PpnEeibBvhereyb1Q" association="_yzsV8PpoEeibBvhereyb1Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yzs9A_poEeibBvhereyb1Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yzs9BPpoEeibBvhereyb1Q" value="1"/>
+    </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_cuAx4PpgEeibBvhereyb1Q" name="retirer" visibility="protected" concurrency="guarded">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_oS9bwPpgEeibBvhereyb1Q" name="montant">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
@@ -185,4 +197,113 @@
   <packagedElement xmi:type="uml:Dependency" xmi:id="_th4a4PpkEeibBvhereyb1Q" name="create" client="_TQx7EPpjEeibBvhereyb1Q" supplier="_KLnYQPphEeibBvhereyb1Q"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_wQy4MPpkEeibBvhereyb1Q" name="create" client="_TQx7EPpjEeibBvhereyb1Q" supplier="_8LsEQPphEeibBvhereyb1Q"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_z7tqwPpkEeibBvhereyb1Q" client="_tmPQgO2tEeiTsoQB8G7nfg" supplier="_TQx7EPpjEeibBvhereyb1Q"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_54fD0PpnEeibBvhereyb1Q" name="Reseau" isAbstract="true">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_pblaQPpsEeibBvhereyb1Q" name="coutReseau" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_9PbxgPpnEeibBvhereyb1Q" name="Remboursement">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_oZMwMPpsEeibBvhereyb1Q" name="montantRembourse" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_D68_kPpuEeibBvhereyb1Q" name="effectuerTransaction"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_uF3U4PpoEeibBvhereyb1Q" name="Visa">
+    <generalization xmi:type="uml:Generalization" xmi:id="_8anM4PpoEeibBvhereyb1Q" general="_54fD0PpnEeibBvhereyb1Q"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Yey3EPpuEeibBvhereyb1Q" name="coutReseau" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      <defaultValue xmi:type="uml:LiteralReal" xmi:id="_Yey3EfpuEeibBvhereyb1Q" value="0.5"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_WbgwsPpuEeibBvhereyb1Q" name="effectuerTransaction"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_4Gt1IPpwEeibBvhereyb1Q" name="remboursement">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_-gD80PpwEeibBvhereyb1Q" name="paiement" type="_nt8doPp1EeibBvhereyb1Q"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_vKVCkPpoEeibBvhereyb1Q" name="MasterCard">
+    <generalization xmi:type="uml:Generalization" xmi:id="_9B9gwPpoEeibBvhereyb1Q" general="_54fD0PpnEeibBvhereyb1Q"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_3IDxUPpsEeibBvhereyb1Q" name="coutReseau" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      <defaultValue xmi:type="uml:LiteralReal" xmi:id="_pmWqYPptEeibBvhereyb1Q" value="0.5"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="__scXwPptEeibBvhereyb1Q" name="Remboursement">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="__scXwfptEeibBvhereyb1Q" name="montantRembourse" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_WHg2oPpuEeibBvhereyb1Q" name="effectuerTransaction"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_yzsV8PpoEeibBvhereyb1Q" memberEnd="_yzs9AvpoEeibBvhereyb1Q _yztkEPpoEeibBvhereyb1Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yzs9APpoEeibBvhereyb1Q" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yzs9AfpoEeibBvhereyb1Q" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_yztkEPpoEeibBvhereyb1Q" name="cartebancaire" type="__dNV0PpVEeibBvhereyb1Q" association="_yzsV8PpoEeibBvhereyb1Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_-WKTkPpoEeibBvhereyb1Q" name="ReseauFactory"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_AwiEQPppEeibBvhereyb1Q" name="crée" client="_-WKTkPpoEeibBvhereyb1Q" supplier="_vKVCkPpoEeibBvhereyb1Q"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_B5ug8PppEeibBvhereyb1Q" name="utilise" client="_tmPQgO2tEeiTsoQB8G7nfg" supplier="_-WKTkPpoEeibBvhereyb1Q"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_VFGJoPppEeibBvhereyb1Q" name="crée" client="_-WKTkPpoEeibBvhereyb1Q" supplier="_uF3U4PpoEeibBvhereyb1Q"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_UAD6kPpxEeibBvhereyb1Q" name="RemboursementVisa" isAbstract="true"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_yAOikPpxEeibBvhereyb1Q" client="_uF3U4PpoEeibBvhereyb1Q" supplier="_UAD6kPpxEeibBvhereyb1Q"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_09YQMPpxEeibBvhereyb1Q" name="RemboursementVisaFrance">
+    <generalization xmi:type="uml:Generalization" xmi:id="_6c7CEPpxEeibBvhereyb1Q" general="_UAD6kPpxEeibBvhereyb1Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_64SIYPpxEeibBvhereyb1Q" name="RemboursementVisaEspagne">
+    <generalization xmi:type="uml:Generalization" xmi:id="_64SIYfpxEeibBvhereyb1Q" general="_UAD6kPpxEeibBvhereyb1Q"/>
+    <generalization xmi:type="uml:Generalization" xmi:id="_cf-3wPpyEeibBvhereyb1Q" general="_UAD6kPpxEeibBvhereyb1Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_9p7JkPpxEeibBvhereyb1Q" name="RemboursementVisaEtatsUnis">
+    <generalization xmi:type="uml:Generalization" xmi:id="_9p7JkfpxEeibBvhereyb1Q" general="_UAD6kPpxEeibBvhereyb1Q"/>
+    <generalization xmi:type="uml:Generalization" xmi:id="_dLFDMPpyEeibBvhereyb1Q" general="_UAD6kPpxEeibBvhereyb1Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Gsf9UPpyEeibBvhereyb1Q" name="RemboursementVisaPortugal">
+    <generalization xmi:type="uml:Generalization" xmi:id="_Gsf9UfpyEeibBvhereyb1Q" general="_UAD6kPpxEeibBvhereyb1Q"/>
+    <generalization xmi:type="uml:Generalization" xmi:id="_d9HkIPpyEeibBvhereyb1Q" general="_UAD6kPpxEeibBvhereyb1Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_K_nYUPpyEeibBvhereyb1Q" name="RemboursementVisaRoyaumeUnis">
+    <generalization xmi:type="uml:Generalization" xmi:id="_K_nYUfpyEeibBvhereyb1Q" general="_UAD6kPpxEeibBvhereyb1Q"/>
+    <generalization xmi:type="uml:Generalization" xmi:id="_bsSxAPpyEeibBvhereyb1Q" general="_UAD6kPpxEeibBvhereyb1Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_OR_IAPpyEeibBvhereyb1Q" name="RemboursementVisaResteMonde">
+    <generalization xmi:type="uml:Generalization" xmi:id="_OR_IAfpyEeibBvhereyb1Q" general="_UAD6kPpxEeibBvhereyb1Q"/>
+    <generalization xmi:type="uml:Generalization" xmi:id="_aiYioPpyEeibBvhereyb1Q" general="_UAD6kPpxEeibBvhereyb1Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_uYSgoPpzEeibBvhereyb1Q" name="Memento">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Uz5q8Pp0EeibBvhereyb1Q" name="solde" visibility="protected">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_WXwDUvp0EeibBvhereyb1Q" name="memento" type="_uYSgoPpzEeibBvhereyb1Q" association="_WXu1MPp0EeibBvhereyb1Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WXwqYPp0EeibBvhereyb1Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WXwqYfp0EeibBvhereyb1Q" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ypJR0PpzEeibBvhereyb1Q" memberEnd="_ypLHAPpzEeibBvhereyb1Q _ypMVIfpzEeibBvhereyb1Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ypKf8PpzEeibBvhereyb1Q" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ypKf8fpzEeibBvhereyb1Q" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_ypMVIfpzEeibBvhereyb1Q" name="client" type="_tmPQgO2tEeiTsoQB8G7nfg" association="_ypJR0PpzEeibBvhereyb1Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_WXu1MPp0EeibBvhereyb1Q" memberEnd="_WXwDUvp0EeibBvhereyb1Q _WXwqYvp0EeibBvhereyb1Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WXwDUPp0EeibBvhereyb1Q" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WXwDUfp0EeibBvhereyb1Q" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_WXwqYvp0EeibBvhereyb1Q" name="memento" type="_uYSgoPpzEeibBvhereyb1Q" association="_WXu1MPp0EeibBvhereyb1Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_nt8doPp1EeibBvhereyb1Q" name="Paiement">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_2J6X8Pp1EeibBvhereyb1Q" name="montant" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_-HMXkPp1EeibBvhereyb1Q" name="pays" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_KqPocPp2EeibBvhereyb1Q" memberEnd="_KqQ2kfp2EeibBvhereyb1Q _KqSEsPp2EeibBvhereyb1Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KqQPgPp2EeibBvhereyb1Q" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KqQ2kPp2EeibBvhereyb1Q" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_KqSEsPp2EeibBvhereyb1Q" name="comptebanquaire" type="_tmPQgO2tEeiTsoQB8G7nfg" association="_KqPocPp2EeibBvhereyb1Q"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_KqQ2kfp2EeibBvhereyb1Q" name="paiement" type="_nt8doPp1EeibBvhereyb1Q" association="_KqPocPp2EeibBvhereyb1Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KqRdoPp2EeibBvhereyb1Q"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KqRdofp2EeibBvhereyb1Q" value="*"/>
+    </ownedEnd>
+  </packagedElement>
 </uml:Model>
