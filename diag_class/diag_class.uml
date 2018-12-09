@@ -4,7 +4,6 @@
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
   <packagedElement xmi:type="uml:Class" xmi:id="_6GessO2nEeiTsoQB8G7nfg" name="Client" visibility="public" isAbstract="true">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_cZp6oO2rEeiTsoQB8G7nfg" name="comptes" visibility="protected"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_S_SAAO2tEeiTsoQB8G7nfg" name="nom" visibility="protected">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
@@ -71,7 +70,10 @@
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wMbPoO2tEeiTsoQB8G7nfg" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_wMdE0O2tEeiTsoQB8G7nfg" key="nature" value="UML_Nature"/>
     </eAnnotations>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_wMikYO2tEeiTsoQB8G7nfg" name="client" type="_6GessO2nEeiTsoQB8G7nfg" association="_wMaokO2tEeiTsoQB8G7nfg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_wMikYO2tEeiTsoQB8G7nfg" name="client" type="_6GessO2nEeiTsoQB8G7nfg" association="_wMaokO2tEeiTsoQB8G7nfg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mpiLQPveEeiki7vWnOKspw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mpr8QPveEeiki7vWnOKspw" value="*"/>
+    </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_xBFKQO2uEeiTsoQB8G7nfg" name="clientPhysique">
     <generalization xmi:type="uml:Generalization" xmi:id="_8VNJ4O2uEeiTsoQB8G7nfg" general="_6GessO2nEeiTsoQB8G7nfg"/>
@@ -306,18 +308,37 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KqRdofp2EeibBvhereyb1Q" value="*"/>
     </ownedEnd>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_tCrtMPuzEei1rrQhfo0g1A" name="ClientBuilder" isAbstract="true"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_Wtc7IPu0Eei1rrQhfo0g1A" name="ClientPhysiqueBuilder">
+  <packagedElement xmi:type="uml:Class" xmi:id="_tCrtMPuzEei1rrQhfo0g1A" name="ClientFactory" isAbstract="true">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_PYpwcPu3Eei1rrQhfo0g1A" name="createClient" visibility="protected">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Tl8QQPu3Eei1rrQhfo0g1A" name="client" type="_6GessO2nEeiTsoQB8G7nfg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_l6Xp4Pu3Eei1rrQhfo0g1A" name="getClient">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_o2ljYPu3Eei1rrQhfo0g1A" name="client" type="_6GessO2nEeiTsoQB8G7nfg" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Wtc7IPu0Eei1rrQhfo0g1A" name="ClientPhysiqueFactory">
     <generalization xmi:type="uml:Generalization" xmi:id="_fovbIPu0Eei1rrQhfo0g1A" general="_tCrtMPuzEei1rrQhfo0g1A"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_ZmyYYPu3Eei1rrQhfo0g1A" name="createClient" visibility="protected">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ZmyYYfu3Eei1rrQhfo0g1A" name="client" type="_6GessO2nEeiTsoQB8G7nfg" direction="return"/>
+    </ownedOperation>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_baeq8Pu0Eei1rrQhfo0g1A" name="ClientMoralBuilder">
+  <packagedElement xmi:type="uml:Class" xmi:id="_baeq8Pu0Eei1rrQhfo0g1A" name="ClientMoralFactory">
     <generalization xmi:type="uml:Generalization" xmi:id="_fI6rkPu0Eei1rrQhfo0g1A" general="_tCrtMPuzEei1rrQhfo0g1A"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_ZYKtkPu3Eei1rrQhfo0g1A" name="createClient" visibility="protected">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ZYKtkfu3Eei1rrQhfo0g1A" name="client" type="_6GessO2nEeiTsoQB8G7nfg" direction="return"/>
+    </ownedOperation>
   </packagedElement>
-  <packagedElement xmi:type="uml:Dependency" xmi:id="_gxUMwPu0Eei1rrQhfo0g1A" name="create" client="_baeq8Pu0Eei1rrQhfo0g1A" supplier="_6GessO2nEeiTsoQB8G7nfg"/>
-  <packagedElement xmi:type="uml:Dependency" xmi:id="_jc1-4Pu0Eei1rrQhfo0g1A" name="create" client="_Wtc7IPu0Eei1rrQhfo0g1A" supplier="_6GessO2nEeiTsoQB8G7nfg"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_v3F5EPu0Eei1rrQhfo0g1A" name="CompteBuilder" isAbstract="true"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_gxUMwPu0Eei1rrQhfo0g1A" name="create" client="_baeq8Pu0Eei1rrQhfo0g1A" supplier="_mUoS0O2nEeiTsoQB8G7nfg"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_jc1-4Pu0Eei1rrQhfo0g1A" name="create" client="_Wtc7IPu0Eei1rrQhfo0g1A" supplier="_xBFKQO2uEeiTsoQB8G7nfg"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_v3F5EPu0Eei1rrQhfo0g1A" name="CompteBuilder" isAbstract="true">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Ymyl4Pu1Eei1rrQhfo0g1A" name="BuildCompte()"/>
+  </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_y3pgAPu0Eei1rrQhfo0g1A" name="ConcreteCompteBuilder">
     <generalization xmi:type="uml:Generalization" xmi:id="_1ufxUPu0Eei1rrQhfo0g1A" general="_v3F5EPu0Eei1rrQhfo0g1A"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_elgAAPu1Eei1rrQhfo0g1A" name="BuildCompte"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_hzvdoPu1Eei1rrQhfo0g1A" name="getCompte">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_mRKrMPu1Eei1rrQhfo0g1A" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg" direction="return"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_2ph2MPu0Eei1rrQhfo0g1A" name="create" client="_y3pgAPu0Eei1rrQhfo0g1A" supplier="_tmPQgO2tEeiTsoQB8G7nfg"/>
 </uml:Model>
