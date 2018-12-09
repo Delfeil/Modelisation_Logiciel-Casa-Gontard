@@ -306,4 +306,18 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KqRdofp2EeibBvhereyb1Q" value="*"/>
     </ownedEnd>
   </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_tCrtMPuzEei1rrQhfo0g1A" name="ClientBuilder" isAbstract="true"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Wtc7IPu0Eei1rrQhfo0g1A" name="ClientPhysiqueBuilder">
+    <generalization xmi:type="uml:Generalization" xmi:id="_fovbIPu0Eei1rrQhfo0g1A" general="_tCrtMPuzEei1rrQhfo0g1A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_baeq8Pu0Eei1rrQhfo0g1A" name="ClientMoralBuilder">
+    <generalization xmi:type="uml:Generalization" xmi:id="_fI6rkPu0Eei1rrQhfo0g1A" general="_tCrtMPuzEei1rrQhfo0g1A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_gxUMwPu0Eei1rrQhfo0g1A" name="create" client="_baeq8Pu0Eei1rrQhfo0g1A" supplier="_6GessO2nEeiTsoQB8G7nfg"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_jc1-4Pu0Eei1rrQhfo0g1A" name="create" client="_Wtc7IPu0Eei1rrQhfo0g1A" supplier="_6GessO2nEeiTsoQB8G7nfg"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_v3F5EPu0Eei1rrQhfo0g1A" name="CompteBuilder" isAbstract="true"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_y3pgAPu0Eei1rrQhfo0g1A" name="ConcreteCompteBuilder">
+    <generalization xmi:type="uml:Generalization" xmi:id="_1ufxUPu0Eei1rrQhfo0g1A" general="_v3F5EPu0Eei1rrQhfo0g1A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_2ph2MPu0Eei1rrQhfo0g1A" name="create" client="_y3pgAPu0Eei1rrQhfo0g1A" supplier="_tmPQgO2tEeiTsoQB8G7nfg"/>
 </uml:Model>
