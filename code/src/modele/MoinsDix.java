@@ -2,7 +2,7 @@ package modele;
 
 public class MoinsDix extends Etat {
 
-	public Float retirer(Float montant, CompteBancaire compte) {
+	public Float retrait(Float montant, CompteBancaire compte) {
 		System.out.println("Vous n'êtes pas autorisé à retirer de l'argent, veillez voir avec votre tuteur");
 	}
 	

@@ -1,9 +1,8 @@
 package modele;
 
-public class Adolescent extends Etat {
-	// Entre 10 et 18 ans
-	
-	public Float retirer(Float montant, CompteBancaire compte) {
+public class Sup18 extends Etat {
+
+	public Float retrait(Float montant, CompteBancaire compte) {
 		return compte.retrait(montant);
 	}
 	
@@ -16,11 +15,11 @@ public class Adolescent extends Etat {
 	}
 	
 	public void definirMontantMax(Float montant, CompteBancaire compte) {
-		System.out.println("Vous n'êtes pas autorisé à modifier le montant maximum retirable, veillez voir avec votre tuteur");
+		
 	}
+	
 	@Override
 	public void etatSuiv(Etat suiv) {
-		// TODO Auto-generated method stub
 
 	}
 
