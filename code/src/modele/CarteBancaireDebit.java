@@ -4,8 +4,8 @@ public class CarteBancaireDebit extends CarteBancaire {
 
 	private Float periodeDebit;
 	
-	public CarteBancaireDebit(Reseau r, Float periodeDebit) {
-		super(r);
+	public CarteBancaireDebit(Reseau r, Client c, CompteBancaire cb, Float periodeDebit) {
+		super(r, c, cb);
 		this.periodeDebit = periodeDebit;
 	}
 	@Override

@@ -4,8 +4,8 @@ public class CarteBancaireCredit extends CarteBancaire {
 
 	private Float plafond;
 	
-	public CarteBancaireCredit(Reseau r, Float plafond) {
-		super(r);
+	public CarteBancaireCredit(Reseau r, Client c, CompteBancaire cb, Float plafond) {
+		super(r, c, cb);
 		this.plafond = plafond;
 	}
 	

@@ -1,5 +1,6 @@
 package modele;
 
+import java.util.ArrayList;
 
 public class CompteBancaire {
 	/**
@@ -25,7 +26,9 @@ public class CompteBancaire {
 	/**
 	 * 
 	 */
-	private Memento memento;
+	private ArrayList<Memento> memento;
+	
+	private ArrayList<Paiement> paiements;
 
 	/**
 	 * 
@@ -53,12 +56,20 @@ public class CompteBancaire {
 	 * 
 	 */
 	public void saveState() {
+		memento.add(new Memento(solde));
 	}
 
 	/**
 	 * 
 	 * @return 
 	 */
-	public Memento getState() {
+	public void getState() {
+		if(memento.size()>0) {
+			Memento save = memento.get(memento.size()-1);
+			solde = save.getState();
+			memento.remove(memento.size()-1);
+		} else {
+			System.out.println("Erreur aucunes sauvegardes précédantes n'as été faites.");
+		}
 	}
 }

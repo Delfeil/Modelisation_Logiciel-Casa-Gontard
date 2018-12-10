@@ -7,8 +7,14 @@ public abstract class CarteBancaire {
 	 */
 	protected Reseau reseau;
 	
-	public CarteBancaire(Reseau r) {
+	protected Client proprietaire;
+	
+	protected CompteBancaire compte;
+	
+	public CarteBancaire(Reseau r, Client c, CompteBancaire cb) {
 		this.reseau = r;
+		this.compte = cb;
+		this.proprietaire = c;
 	}
 
 	/**

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_mUoS0O2nEeiTsoQB8G7nfg" name="diag_class" visibility="private">
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_mUoS0O2nEeiTsoQB8G7nfg" name="diag_class" visibility="public">
   <packageImport xmi:type="uml:PackageImport" xmi:id="_mcZuwO2nEeiTsoQB8G7nfg">
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
@@ -277,6 +277,10 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WXwqYPp0EeibBvhereyb1Q"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WXwqYfp0EeibBvhereyb1Q" value="1"/>
     </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_lv6bwPzHEeiBmdudI7XRZQ" name="saveState"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_olcecPzHEeiBmdudI7XRZQ" name="getState">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_olcecfzHEeiBmdudI7XRZQ" name="etat" type="_uYSgoPpzEeibBvhereyb1Q" direction="return"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_ypJR0PpzEeibBvhereyb1Q" memberEnd="_ypLHAPpzEeibBvhereyb1Q _ypMVIfpzEeibBvhereyb1Q">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ypKf8PpzEeibBvhereyb1Q" source="org.eclipse.papyrus">
@@ -341,4 +345,14 @@
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_2ph2MPu0Eei1rrQhfo0g1A" name="create" client="_y3pgAPu0Eei1rrQhfo0g1A" supplier="_tmPQgO2tEeiTsoQB8G7nfg"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_0pg-APyrEeiBmdudI7XRZQ" memberEnd="_0phlEfyrEeiBmdudI7XRZQ _0piMIPyrEeiBmdudI7XRZQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0pg-AfyrEeiBmdudI7XRZQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0phlEPyrEeiBmdudI7XRZQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_0piMIPyrEeiBmdudI7XRZQ" name="client" type="_6GessO2nEeiTsoQB8G7nfg" association="_0pg-APyrEeiBmdudI7XRZQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_0phlEfyrEeiBmdudI7XRZQ" name="cartebancaire" type="__dNV0PpVEeibBvhereyb1Q" association="_0pg-APyrEeiBmdudI7XRZQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0phlEvyrEeiBmdudI7XRZQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0phlE_yrEeiBmdudI7XRZQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
 </uml:Model>
