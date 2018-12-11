@@ -14,13 +14,13 @@ public class CarteFactory {
 	 * @param type 
 	 * @return 
 	 */
-	public CarteBancaire creerCarte(String type, Reseau r) {
+	public CarteBancaire creerCarte(String type, Reseau r, CompteBancaire compte, Client c) {
 		if(type == "credit") {
 			Float plafond = (float) 3000;
-			return new CarteBancaireCredit(r, plafond);
+			return new CarteBancaireCredit(r, c, compte, plafond);
 		} else if(type == "debit") {
 			Float delais = (float) 3000;
-			return new CarteBancaireDebit(r, delais);
+			return new CarteBancaireDebit(r, c, compte, delais);
 		} else {
 			return null;
 		}

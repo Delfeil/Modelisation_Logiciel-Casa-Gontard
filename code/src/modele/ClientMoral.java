@@ -1,5 +1,7 @@
 package modele;
 
+import java.util.ArrayList;
+
 public class ClientMoral extends Client {
 	/**
 	 * 
@@ -16,20 +18,19 @@ public class ClientMoral extends Client {
 	/**
 	 * 
 	 */
-	public ClientPhysique respondable;
+	public ArrayList<ClientPhysique> respondables;
 	
-	public ClientPhysique getRespondable() {
-		return respondable;
+	public ArrayList<ClientPhysique> getRespondables() {
+		return respondables;
 	}
 	
-	public void setRespondable(ClientPhysique respondable) {
-		this.respondable = respondable;
+	public void addRespondable(ClientPhysique respondable) {
+		this.respondables.add(respondable);
 	}
 	
-	public ClientMoral(String nom, String adressePost, String adressMail, String numTel, String numSiret, ClientPhysique resp) {
+	public ClientMoral(String nom, String adressePost, String adressMail, String numTel, String numSiret) {
 		super(nom, adressePost, adressMail, numTel);
 		this.numSiret = numSiret;
-		this.respondable = resp;
 	}
 
 	/**

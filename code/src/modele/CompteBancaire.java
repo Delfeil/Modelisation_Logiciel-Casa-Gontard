@@ -6,13 +6,13 @@ public class CompteBancaire {
 	/**
 	 * 
 	 */
-	private String numCompte;
+	private int numCompte;
 	
-	public String getNumCompte() {
+	public int getNumCompte() {
 		return this.numCompte;
 	}
 	
-	public void setNumCompte(String num) {
+	public void setNumCompte(int num) {
 		this.numCompte = num;
 	}
 	/**
@@ -55,7 +55,41 @@ public class CompteBancaire {
 	/**
 	 * 
 	 */
+	
+	private ArrayList<Client> proprietaires;
+	
+	public ArrayList<Client> getProprietaires() {
+		return proprietaires;
+	}
+	
+	public void addProprietaires(Client c) {
+		proprietaires.add(c);
+	}
+	
+	public boolean clientPresent(Client c) {
+		for(int i=0; i<proprietaires.size(); i++) {
+			if(c.getNom() == proprietaires.get(i).getNom()) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	private CarteBancaire carteBancaire;
+	
+	public CarteBancaire getCarteBancaire() {
+		return this.carteBancaire;
+	}
+	
+	public void setCarteBancaire(String type, Reseau r, Client c) {
+		CarteFactory cf= new CarteFactory();
+		
+		if(clientPresent(c)) {
+			this.carteBancaire = cf.creerCarte(type, r, this, c);
+		} else {
+			carteBancaire = null;
+		}
+	}
 	/**
 	 * 
 	 */
@@ -63,7 +97,7 @@ public class CompteBancaire {
 	
 	private ArrayList<Paiement> paiements;
 
-	public CompteBancaire(String num, Float solde, Float debitMax, Float montantDecouverMax, CarteBancaire carteBancaire) {
+	public CompteBancaire(int num, Float solde, Float debitMax, Float montantDecouverMax, CarteBancaire carteBancaire) {
 		this.numCompte = num;
 		this.solde = solde;
 		this.debitMax = debitMax;
@@ -92,7 +126,7 @@ public class CompteBancaire {
 	}
 	
 	public Boolean retirable(Float montant) {
-		if(montant > debitMax) {
+		if((debitMax != null) && (montant > debitMax)) {
 			return false;
 		} else if(solde - montant < -montantDecouverMax) {
 			return false;
