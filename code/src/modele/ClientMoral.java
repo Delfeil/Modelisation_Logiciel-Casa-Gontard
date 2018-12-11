@@ -42,8 +42,8 @@ public class ClientMoral extends Client {
 	}
 	
 	public boolean equals(ClientMoral cm){
-	if (this.nom==cm.nom && this.numSiret==cm.numSiret)
-		return true;
-	else return false;
+		if (this.nom==cm.nom && this.numSiret==cm.numSiret)
+			return true;
+		else return false;
 	}
 }

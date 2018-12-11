@@ -66,8 +66,8 @@ public class ClientPhysique extends Client {
 	}
 	
 	public boolean equals(ClientPhysique cp){
-	if (this.nom==cp.nom && this.adressePost==cp.adressePost)
-		return true;
-	else return false;
+		if (this.nom==cp.nom)
+			return true;
+		else return false;
 	}
 }

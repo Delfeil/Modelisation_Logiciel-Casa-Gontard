@@ -37,7 +37,7 @@ public class Controleur {
 		c.Afficher(s);
 	}
 	
-	public void crerClient() {
+	public Client crerClient() {
 		boolean termine = false;
 		while(!termine) {
 			c.Afficher("Quel type de client voulez-vous créer?: 'moral' ou 'physique'");
@@ -55,15 +55,128 @@ public class Controleur {
 					case "moral":
 						c.Afficher("Veuillez Saisir le numérot SIRET");
 						String siret = c.saisie();
-						break;
+						ClientFactory cmf = new ClientMoralFactory();
+						Client clientTmp = cmf.createClient(nom, adresse, mail, numTel);
+						((ClientMoral) clientTmp).setNumSiret(siret);
+						
+						boolean finResponsable = false;
+						
+						while(!finResponsable) {
+							c.Afficher("Veuillez Saisir le nom du client responsable");
+							String nomResp = c.saisie();
+							ClientFactory cf = new ClientPhysiqueFactory();
+							Client tmpClientPhysique = cf.createClient(nomResp, null, null, null);
+							ArrayList<Client> listeClients = b.getClients();
+							int index = listeClients.indexOf(tmpClientPhysique);
+							Client resp = null;
+							if(index!=-1) {
+								resp = listeClients.get(index);
+							} else {
+								c.Afficher("Voulez-vous choisir un autre responsable, ou créer un compte? 'creer', 'autre responsable'");
+								String choixResp = c.saisie();
+								switch(choixResp) {
+									case "creer":
+										resp = crerClient();
+										break;
+									case "autre responsable":
+										break;
+								}
+							}
+							if(resp != null) {
+								((ClientMoral)clientTmp).addRespondable((ClientPhysique) resp);
+								c.Afficher("Voulez-vous ajouter un autre responsable? 'oui', 'non'");
+								String choixContinuer = c.saisie();
+								switch(choixContinuer) {
+									case "oui":
+										break;
+									case "non":
+										finResponsable = true;
+										break;
+								}
+							}
+						}
+						if(clientTmp != null) {
+							b.addClient(clientTmp);
+						}
+						return clientTmp;
 					case "physique":
 						c.Afficher("Veuillez Saisir l'age du client");
 						int age = c.saisieInt();
-						break;
+						ClientFactory cff = new ClientPhysiqueFactory();
+						Client clientPhysiqueTmp = ((ClientPhysiqueFactory)cff).createClient(nom, adresse, mail, numTel);
+						((ClientPhysique)clientPhysiqueTmp).setAge(age);
+						if(age<18) {
+							boolean finTuteur = false;
+							
+							while(!finTuteur) {
+								c.Afficher("Veuillez Saisir le nom du client tuteur");
+								String nomTut = c.saisie();
+								ClientFactory cf = new ClientPhysiqueFactory();
+								Client tmpClientPhysique = cf.createClient(nomTut, null, null, null);
+								ArrayList<Client> listeClients = b.getClients();
+								int index = listeClients.indexOf(tmpClientPhysique);
+								Client tut = null;
+								if(index!=-1) {
+									tut = listeClients.get(index);
+								} else {
+									c.Afficher("Voulez-vous choisir un autre tuteur, ou créer un compte? 'creer', 'autre tuteur'");
+									String choixTut = c.saisie();
+									switch(choixTut) {
+										case "creer":
+											tut = crerClient();
+											break;
+										case "autre tuteur":
+											break;
+									}
+								}
+								if(tut != null) {
+									((ClientPhysique)clientPhysiqueTmp).setTuteur(tut);
+									finTuteur = true;
+								}
+							}
+						} else {
+							c.Afficher("Voulez vous ajouter un tuteur");
+							String choixTut18 = c.saisie();
+							if(choixTut18 == "oui") {
+								boolean finTuteur = false;
+								
+								while(!finTuteur) {
+									c.Afficher("Veuillez Saisir le nom du client tuteur");
+									String nomTut = c.saisie();
+									ClientFactory cf = new ClientPhysiqueFactory();
+									Client tmpClientPhysique = cf.createClient(nomTut, null, null, null);
+									ArrayList<Client> listeClients = b.getClients();
+									int index = listeClients.indexOf(tmpClientPhysique);
+									Client tut = null;
+									if(index!=-1) {
+										tut = listeClients.get(index);
+									} else {
+										c.Afficher("Voulez-vous choisir un autre tuteur, ou créer un compte? 'creer', 'autre tuteur'");
+										String choixTut = c.saisie();
+										switch(choixTut) {
+											case "creer":
+												tut = crerClient();
+												break;
+											case "autre tuteur":
+												break;
+										}
+									}
+									if(tut != null) {
+										((ClientPhysique)clientPhysiqueTmp).setTuteur(tut);
+										finTuteur = true;
+									}
+								}
+							}
+						}
+						if(clientPhysiqueTmp != null) {
+							b.addClient(clientPhysiqueTmp);
+						}
+						return clientPhysiqueTmp;
 				}
 			} else {
 				c.Afficher("Erreur de saisie");
 			}
 		}
+		return null;
 	}
 }
