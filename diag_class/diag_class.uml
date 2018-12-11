@@ -240,9 +240,14 @@
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_yztkEPpoEeibBvhereyb1Q" name="cartebancaire" type="__dNV0PpVEeibBvhereyb1Q" association="_yzsV8PpoEeibBvhereyb1Q"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_-WKTkPpoEeibBvhereyb1Q" name="ReseauFactory"/>
-  <packagedElement xmi:type="uml:Dependency" xmi:id="_AwiEQPppEeibBvhereyb1Q" name="crée" client="_-WKTkPpoEeibBvhereyb1Q" supplier="_vKVCkPpoEeibBvhereyb1Q"/>
-  <packagedElement xmi:type="uml:Dependency" xmi:id="_VFGJoPppEeibBvhereyb1Q" name="crée" client="_-WKTkPpoEeibBvhereyb1Q" supplier="_uF3U4PpoEeibBvhereyb1Q"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_-WKTkPpoEeibBvhereyb1Q" name="ReseauFactory">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_mukm4P2MEeitNo1Ek6M7Fg" name="getReseau">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_rvRgoP2MEeitNo1Ek6M7Fg" name="reseau" type="_54fD0PpnEeibBvhereyb1Q" direction="return"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_t-Ru0P2MEeitNo1Ek6M7Fg" name="type">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_UAD6kPpxEeibBvhereyb1Q" name="RemboursementVisa" isAbstract="true">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_RT7TwP1LEeiYS_99LQXRrg" name="Property1" visibility="protected"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_WxXz4P1LEeiYS_99LQXRrg" name="remboursement">
@@ -364,4 +369,6 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0phlE_yrEeiBmdudI7XRZQ" value="1"/>
     </ownedEnd>
   </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_fXcBQP2MEeitNo1Ek6M7Fg" name="Crée" client="_-WKTkPpoEeibBvhereyb1Q" supplier="_vKVCkPpoEeibBvhereyb1Q"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_f20r8P2MEeitNo1Ek6M7Fg" name="crée" client="_-WKTkPpoEeibBvhereyb1Q" supplier="_uF3U4PpoEeibBvhereyb1Q"/>
 </uml:Model>
