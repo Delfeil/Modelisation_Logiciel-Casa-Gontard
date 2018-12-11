@@ -72,6 +72,7 @@ public class CompteBancaire {
 	}
 	
 	public void ajoutArgent(Float montant) {
+		saveState();
 		this.solde += montant;
 	}
 
@@ -81,6 +82,7 @@ public class CompteBancaire {
 	 */
 	public float retrait(Float montant) {
 		if(retirable(montant)) {
+			saveState();
 			solde -=montant;
 			return montant;
 		} else {
