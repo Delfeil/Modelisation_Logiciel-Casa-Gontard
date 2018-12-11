@@ -7,22 +7,55 @@ public class CompteBancaire {
 	 * 
 	 */
 	private String numCompte;
+	
+	public String getNumCompte() {
+		return this.numCompte;
+	}
+	
+	public void setNumCompte(String num) {
+		this.numCompte = num;
+	}
 	/**
 	 * 
 	 */
 	private Float solde;
+	
+	public void setSolde(Float solde) {
+		this.solde = solde;
+	}
+	
+	public Float consulterSolde() {
+		//Correspond à getSolde
+		return solde;
+	}
 	/**
 	 * 
 	 */
 	private Float debitMax;
+	
+	public Float getDebitMax() {
+		return this.debitMax;
+	}
+	
+	public void setDebitMax(Float debit) {
+		this.debitMax = debit;
+	}
 	/**
 	 * 
 	 */
-	private Float montantDecouver;
+	private Float montantDecouverMax;
+	
+	public Float getMontantDecouverMax() {
+		return this.montantDecouverMax;
+	}
+	
+	public void setmontantDecouverMax(Float montant) {
+		this.montantDecouverMax = montant;
+	}
 	/**
 	 * 
 	 */
-	private CarteBancaire cartebancaire;
+	private CarteBancaire carteBancaire;
 	/**
 	 * 
 	 */
@@ -30,10 +63,14 @@ public class CompteBancaire {
 	
 	private ArrayList<Paiement> paiements;
 
-	/**
-	 * 
-	 * @param montant 
-	 */
+	public CompteBancaire(String num, Float solde, Float debitMax, Float montantDecouverMax, CarteBancaire carteBancaire) {
+		this.numCompte = num;
+		this.solde = solde;
+		this.debitMax = debitMax;
+		this.montantDecouverMax = montantDecouverMax;
+		this.carteBancaire = carteBancaire;
+	}
+	
 	public void ajoutArgent(Float montant) {
 		this.solde += montant;
 	}
@@ -42,15 +79,25 @@ public class CompteBancaire {
 	 * 
 	 * @param montant 
 	 */
-	public Float retrait(Float montant) {
+	public float retrait(Float montant) {
+		if(retirable(montant)) {
+			solde -=montant;
+			return montant;
+		} else {
+			System.out.println("Retrait non autorisé");
+			return (float) 0;
+		}
 	}
-
-	/**
-	 * 
-	 * @return 
-	 */
-	public Float consulterSolde() {
-	}
+	
+	public Boolean retirable(Float montant) {
+		if(montant > debitMax) {
+			return false;
+		} else if(solde - montant < -montantDecouverMax) {
+			return false;
+		} else {
+			return true;
+		}
+	}	
 
 	/**
 	 * 
@@ -71,5 +118,9 @@ public class CompteBancaire {
 		} else {
 			System.out.println("Erreur aucunes sauvegardes précédantes n'as été faites.");
 		}
+	}
+	
+	public void ajoutPaiement(Float montant, String pays) {
+		this.paiements.add(new Paiement(montant, pays));
 	}
 }

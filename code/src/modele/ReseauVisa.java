@@ -1,10 +1,6 @@
 package modele;
 
 public class ReseauVisa extends Reseau {
-	/**
-	 * 
-	 */
-	protected Float coutReseau;
 	
 	public ReseauVisa() {
 		this.coutReseau = (float) 0.25;
@@ -14,13 +10,29 @@ public class ReseauVisa extends Reseau {
 	 * 
 	 * @return 
 	 */
-	public Float Remboursement() {
-		return null;
-	}
-
-	/**
-	 * 
-	 */
-	public void effectuerTransaction() {
+	public Float Remboursement(Paiement p, CompteBancaire c) {
+		RemboursementVisa rV;
+		switch (p.getPays()) {
+			case "France":
+				rV = new RemboursementVisaFrance();
+				break;
+			case "Espagne":
+				rV = new RemboursementVisaEspagne();
+				break;
+			case "Etats-Unis":
+				rV = new RemboursementVisaEtatsUnis();
+				break;
+			case "Portugal":
+				rV = new RemboursementVisaPortugal();
+				break;
+			case "Royaume-Unis":
+				rV = new RemboursementVisaRoyaumeUnis();
+				break;
+			default:
+				rV = new RemboursementVisaResteMonde();
+				break;
+		}
+		c.ajoutArgent(rV.remoursement(p.getMontant()));
+		return rV.remoursement(p.getMontant());
 	}
 }

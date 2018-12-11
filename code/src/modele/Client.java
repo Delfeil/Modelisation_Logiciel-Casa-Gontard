@@ -62,13 +62,13 @@ public abstract class Client {
 		this.numTel = numTel;
 	}
 	
-	protected ArrayList<CompteBanquaire> compteBanquaire;
+	protected ArrayList<CompteBancaire> comptesBancaire;
 
 	/**
 	 * 
 	 * @param compte 
 	 */
-	public void ajoutCompte(CompteBanquaire compte) {
-		compteBanquaire.add(compte);
+	public void ajoutCompte(CompteBancaire compte) {
+		comptesBancaire.add(compte);
 	}
 }

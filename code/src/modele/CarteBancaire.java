@@ -22,11 +22,11 @@ public abstract class CarteBancaire {
 	 * @param montant 
 	 * @return 
 	 */
-	protected abstract Float retirer(Float montant);
+	protected abstract Float retirer(Float montant, String pays);
 
 	/**
 	 * 
 	 * @return 
 	 */
-	protected abstract boolean ValiderRetrait();
+	protected abstract boolean validerRetrait(Float montant);
 }

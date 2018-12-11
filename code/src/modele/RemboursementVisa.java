@@ -9,4 +9,19 @@ package modele;
  * 
  */
 public abstract class RemboursementVisa {
+	
+	protected float retenue;
+	
+	public void setRetenue(float retenue) {
+		this.retenue = retenue;
+	}
+	
+	public float getRetenue() {
+		return this.retenue;
+	}
+	
+	public float remoursement(float montant) {
+		float retenu = montant * retenue;
+		return montant - retenu;
+	}
 };

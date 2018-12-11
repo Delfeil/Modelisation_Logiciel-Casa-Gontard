@@ -9,4 +9,7 @@ package modele;
  * 
  */
 public class RemboursementVisaEtatsUnis extends RemboursementVisa {
+	public RemboursementVisaEtatsUnis() {
+		retenue = (float) 0.2;
+	}
 };

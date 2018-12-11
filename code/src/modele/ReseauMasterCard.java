@@ -1,10 +1,6 @@
 package modele;
 
 public class ReseauMasterCard extends Reseau {
-	/**
-	 * 
-	 */
-	protected Float coutReseau;
 	
 	public ReseauMasterCard() {
 		this.coutReseau = (float) 0.5;
@@ -14,13 +10,8 @@ public class ReseauMasterCard extends Reseau {
 	 * 
 	 * @return 
 	 */
-	public Float Remboursement() {
-		return null;
-	}
-
-	/**
-	 * 
-	 */
-	public void effectuerTransaction() {
+	public Float Remboursement(Paiement p, CompteBancaire c) {
+		c.ajoutArgent(p.getMontant());
+		return p.getMontant();
 	}
 }

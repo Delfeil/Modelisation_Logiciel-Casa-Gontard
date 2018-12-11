@@ -244,7 +244,17 @@
   <packagedElement xmi:type="uml:Dependency" xmi:id="_AwiEQPppEeibBvhereyb1Q" name="crée" client="_-WKTkPpoEeibBvhereyb1Q" supplier="_vKVCkPpoEeibBvhereyb1Q"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_B5ug8PppEeibBvhereyb1Q" name="utilise" client="_tmPQgO2tEeiTsoQB8G7nfg" supplier="_-WKTkPpoEeibBvhereyb1Q"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_VFGJoPppEeibBvhereyb1Q" name="crée" client="_-WKTkPpoEeibBvhereyb1Q" supplier="_uF3U4PpoEeibBvhereyb1Q"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_UAD6kPpxEeibBvhereyb1Q" name="RemboursementVisa" isAbstract="true"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_UAD6kPpxEeibBvhereyb1Q" name="RemboursementVisa" isAbstract="true">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_RT7TwP1LEeiYS_99LQXRrg" name="Property1" visibility="protected"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_WxXz4P1LEeiYS_99LQXRrg" name="remboursement">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_bIYQYP1LEeiYS_99LQXRrg" name="montant">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_erNd8P1LEeiYS_99LQXRrg" name="montantRembourse" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_yAOikPpxEeibBvhereyb1Q" client="_uF3U4PpoEeibBvhereyb1Q" supplier="_UAD6kPpxEeibBvhereyb1Q"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_09YQMPpxEeibBvhereyb1Q" name="RemboursementVisaFrance">
     <generalization xmi:type="uml:Generalization" xmi:id="_6c7CEPpxEeibBvhereyb1Q" general="_UAD6kPpxEeibBvhereyb1Q"/>

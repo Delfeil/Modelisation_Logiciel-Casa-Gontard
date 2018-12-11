@@ -2,22 +2,36 @@ package modele;
 
 public class CarteBancaireDebit extends CarteBancaire {
 
-	private Float periodeDebit;
+	private Float plafond;
 	
-	public CarteBancaireDebit(Reseau r, Client c, CompteBancaire cb, Float periodeDebit) {
+	public CarteBancaireDebit(Reseau r, Client c, CompteBancaire cb, Float plafond) {
 		super(r, c, cb);
-		this.periodeDebit = periodeDebit;
+		this.plafond = plafond;
 	}
 	@Override
-	protected Float retirer(Float montant) {
-		// TODO Auto-generated method stub
-		return null;
+	protected Float retirer(Float montant, String pays) {
+		if(reseau != null) {
+			montant = reseau.ajoutCoutReseau(montant);
+		}
+		if(validerRetrait(montant)) {
+			System.out.println("payement accepté");
+			if(reseau != null) {
+				reseau.creerPaiement(compte, montant, pays);
+			}
+			return compte.retrait(montant);
+		} else {
+			return (float) 0;
+		}
 	}
 
 	@Override
-	protected boolean ValiderRetrait() {
-		// TODO Auto-generated method stub
-		return false;
+	protected boolean validerRetrait(Float montant) {
+		if(montant > plafond) {
+			System.out.println("Plafond maximum dépassé");
+			return false;
+		} else {
+			return compte.retirable(montant);
+		}
 	}
 
 }
