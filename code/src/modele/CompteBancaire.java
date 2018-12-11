@@ -159,4 +159,10 @@ public class CompteBancaire {
 	public void ajoutPaiement(Float montant, String pays) {
 		this.paiements.add(new Paiement(montant, pays));
 	}
+	
+	public boolean equals(CompteBancaire cb){
+		if (this.numCompte==cb.numCompte)
+			return true;
+		else return false;
+		}
 }

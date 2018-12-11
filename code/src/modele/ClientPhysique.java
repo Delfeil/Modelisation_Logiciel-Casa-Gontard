@@ -64,4 +64,10 @@ public class ClientPhysique extends Client {
 			this.etat = suiv;
 		}
 	}
+	
+	public boolean equals(ClientPhysique cp){
+	if (this.nom==cp.nom && this.adressePost==cp.adressePost)
+		return true;
+	else return false;
+	}
 }

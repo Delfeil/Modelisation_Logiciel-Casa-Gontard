@@ -40,4 +40,10 @@ public class ClientMoral extends Client {
 	public void ajoutCompte(CompteBancaire compte) {
 		super.ajoutCompte(compte);
 	}
+	
+	public boolean equals(ClientMoral cm){
+	if (this.nom==cm.nom && this.numSiret==cm.numSiret)
+		return true;
+	else return false;
+	}
 }

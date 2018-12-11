@@ -71,4 +71,6 @@ public abstract class Client {
 	public void ajoutCompte(CompteBancaire compte) {
 		comptesBancaire.add(compte);
 	}
+	
+
 }
