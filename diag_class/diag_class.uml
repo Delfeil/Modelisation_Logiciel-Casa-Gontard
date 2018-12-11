@@ -371,4 +371,25 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_fXcBQP2MEeitNo1Ek6M7Fg" name="Crée" client="_-WKTkPpoEeibBvhereyb1Q" supplier="_vKVCkPpoEeibBvhereyb1Q"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_f20r8P2MEeitNo1Ek6M7Fg" name="crée" client="_-WKTkPpoEeibBvhereyb1Q" supplier="_uF3U4PpoEeibBvhereyb1Q"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_75urIP2OEeitNo1Ek6M7Fg" name="Banque"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_-5Le0P2OEeitNo1Ek6M7Fg" memberEnd="_-5Ms8P2OEeitNo1Ek6M7Fg _-5NUAP2OEeitNo1Ek6M7Fg" navigableOwnedEnd="_-5Ms8P2OEeitNo1Ek6M7Fg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-5MF4P2OEeitNo1Ek6M7Fg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-5MF4f2OEeitNo1Ek6M7Fg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_-5NUAP2OEeitNo1Ek6M7Fg" name="banque" type="_75urIP2OEeitNo1Ek6M7Fg" association="_-5Le0P2OEeitNo1Ek6M7Fg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_-5Ms8P2OEeitNo1Ek6M7Fg" name="client" type="_6GessO2nEeiTsoQB8G7nfg" aggregation="composite" association="_-5Le0P2OEeitNo1Ek6M7Fg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-5Ms8f2OEeitNo1Ek6M7Fg"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-5Ms8v2OEeitNo1Ek6M7Fg" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="__64MYP2OEeitNo1Ek6M7Fg" memberEnd="__64zcv2OEeitNo1Ek6M7Fg __64zdf2OEeitNo1Ek6M7Fg" navigableOwnedEnd="__64zcv2OEeitNo1Ek6M7Fg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__64zcP2OEeitNo1Ek6M7Fg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__64zcf2OEeitNo1Ek6M7Fg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="__64zdf2OEeitNo1Ek6M7Fg" name="banque" type="_75urIP2OEeitNo1Ek6M7Fg" association="__64MYP2OEeitNo1Ek6M7Fg"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="__64zcv2OEeitNo1Ek6M7Fg" name="comptebanquaire" type="_tmPQgO2tEeiTsoQB8G7nfg" aggregation="composite" association="__64MYP2OEeitNo1Ek6M7Fg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__64zc_2OEeitNo1Ek6M7Fg"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__64zdP2OEeitNo1Ek6M7Fg" value="*"/>
+    </ownedEnd>
+  </packagedElement>
 </uml:Model>
