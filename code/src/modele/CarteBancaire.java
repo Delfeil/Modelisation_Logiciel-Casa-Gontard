@@ -18,14 +18,14 @@ public abstract class CarteBancaire {
 	}
 
 	/**
-	 * 
+	 * Fonction qui permet de retirer de l'argent nous retenons le montant et le pays 
 	 * @param montant 
 	 * @return 
 	 */
 	protected abstract Float retirer(Float montant, String pays);
 
 	/**
-	 * 
+	 * Cette fonction permet de valider le montant en fonction du solde actuel que l'on a sur notre compte
 	 * @return 
 	 */
 	protected abstract boolean validerRetrait(Float montant);

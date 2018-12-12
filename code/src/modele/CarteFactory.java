@@ -6,7 +6,8 @@ package modele;
 
 /************************************************************/
 /**
- * 
+ * Permet de créer une carte Bancaire pour un compte et un client donnée 
+ * Choix si c'est une carte à débit ou à crédit
  */
 public class CarteFactory {
 	/**

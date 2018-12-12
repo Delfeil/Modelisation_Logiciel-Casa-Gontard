@@ -29,6 +29,7 @@ public class CarteBancaireCredit extends CarteBancaire {
 		
 	}
 	
+	//Permet de retirer de l'argent et vérifie si le retrait est possible 
 	@Override
 	protected Float retirer(Float montant, String pays) {
 		if(reseau != null) {
@@ -45,12 +46,14 @@ public class CarteBancaireCredit extends CarteBancaire {
 		}
 	}
 
+	//fonction qui est appelé dans la fonction précédante pour savoir si le retrait est possible
 	@Override
 	protected boolean validerRetrait(Float montant) {
 		Float futurTot = montantTot + montant;
 		return compte.retirable(futurTot);
 	}
 	
+	//Fait le retrait de tous les credit accumulés lors de la période
 	public void finPediode() {
 		compte.retrait(montantTot);
 		montantTot = (float) 0;

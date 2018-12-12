@@ -63,16 +63,18 @@ public abstract class Client {
 		this.numTel = numTel;
 	}
 	
+	//liste des comptes bancaires appartenant au client courant
 	protected ArrayList<CompteBancaire> comptesBancaire;
 
 	/**
-	 * 
+	 * Ajout d'un compte bancaire pour un client
 	 * @param compte 
 	 */
 	public void ajoutCompte(CompteBancaire compte) {
 		comptesBancaire.add(compte);
 	}
 	
+	//Surdéfinition de la méthode equals
 	@Override
 	public boolean equals(Object o) {
 		System.out.println("compraison");

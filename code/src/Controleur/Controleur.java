@@ -12,6 +12,8 @@ public class Controleur {
 	private Client clientCourant;
 	private CompteBancaire compteCourant;
 	
+	//Choix que l'utilisateur peut faire lors de la connexion
+	
 	public void scenario() {
 		while(true) {
 			if(clientCourant == null) {
@@ -40,6 +42,8 @@ public class Controleur {
 			}
 		}
 	}
+	
+	//Fonction qui permet à l'utilisateur de ce connecter à un compte client déjà existant
 	
 	private void connectClient() {
 		c.Afficher("Saisissez le nom du client");
@@ -72,6 +76,9 @@ public class Controleur {
 		clientConnected();
 	}
 
+	
+	//Une fois le client connecter il a d'autres choix de fonction 
+	
 	private void clientConnected() {
 		boolean clientConnected =true;
 		while(clientConnected) {
@@ -98,6 +105,7 @@ public class Controleur {
 		}
 	}
 
+	//Choix solde lors de la création du compte
 	private void crerCompte() {
 		c.Afficher("Combien d'argent voulez-vous y mettre");
 		float choixSolde = c.saisieInt();
@@ -107,12 +115,16 @@ public class Controleur {
 		c.Afficher(s);
 	}
 	
+	//Permet d'afficher la liste des clients qui ont un compte dans la banque
+	
 	public void afficheTable(ArrayList<Client> tc) {
 		for(int i=0; i< tc.size(); i++) {
 			c.Afficher(tc.get(i).getNom());
 			c.Afficher("-------");
 		}
 	}
+	
+	//Fonction qui permet de créer un compte client physique majeur/mineur ou moral
 	
 	public Client crerClient() {
 		boolean termine = false;

@@ -8,6 +8,8 @@ public class CarteBancaireDebit extends CarteBancaire {
 		super(r, c, cb);
 		this.plafond = plafond;
 	}
+	
+	//Permet de retirer de l'argent et vérifie si le retrait est possible 
 	@Override
 	protected Float retirer(Float montant, String pays) {
 		if(reseau != null) {
@@ -24,6 +26,7 @@ public class CarteBancaireDebit extends CarteBancaire {
 		}
 	}
 
+	//fonction qui est appelé dans la fonction précédante pour savoir si le retrait est possible
 	@Override
 	protected boolean validerRetrait(Float montant) {
 		if(montant > plafond) {
