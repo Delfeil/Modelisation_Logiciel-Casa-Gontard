@@ -72,5 +72,16 @@ public abstract class Client {
 		comptesBancaire.add(compte);
 	}
 	
+	@Override
+	public boolean equals(Object o) {
+		System.out.println("compraison");
+		Client c = (Client) o;
+		System.out.println("" + c.getNom() + ", " + getNom());
+		if (this.nom.equals(c.nom)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 }

@@ -10,14 +10,14 @@ public class Console {
 	public String saisie() {
 		Scanner read = new Scanner(System.in);
 		String saisie = read.nextLine();
-		read.close();
+//		read.close();
 		return saisie;
 	}
 	
 	public int saisieInt() {
 		Scanner read = new Scanner(System.in);
 		int saisie = read.nextInt();
-		read.close();
+//		read.close();
 		return saisie;
 	}
 }

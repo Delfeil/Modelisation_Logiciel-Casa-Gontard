@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Banque {
 	//Classe servant de base de donnée
-	private ArrayList<Client> clients;
+	private ArrayList<Client> clients = new ArrayList<Client>();
 	
 	public ArrayList<Client> getClients() {
 		return clients;
@@ -14,7 +14,7 @@ public class Banque {
 		clients.add(c);
 	}
 	
-	private ArrayList<CompteBancaire> comptes;
+	private ArrayList<CompteBancaire> comptes = new ArrayList<CompteBancaire>();
 	
 	public ArrayList<CompteBancaire> getComptesBancaire() {
 		return comptes;

@@ -12,6 +12,14 @@ public class ClientPhysique extends Client {
 	
 	public void setAge(int age) {
 		this.age = age;
+		this.age = age;
+		if(age<10) {
+			this.etat = new MoinsDix();
+		} else if(age>=10 && age<18) {
+			this.etat = new Adolescent();
+ 		} else {
+ 			this.etat = new Sup18();
+ 		}
 	}
 	/**
 	 * 
@@ -38,16 +46,8 @@ public class ClientPhysique extends Client {
 		this.tuteur = tuteur;
 	}
 	
-	public ClientPhysique(String nom, String adressePost, String adressMail, String numTel, int age) {
+	public ClientPhysique(String nom, String adressePost, String adressMail, String numTel) {
 		super(nom, adressePost, adressMail, numTel);
-		this.age = age;
-		if(age<10) {
-			this.etat = new MoinsDix();
-		} else if(age>=10 && age<18) {
-			this.etat = new Adolescent();
- 		} else {
- 			this.etat = new Sup18();
- 		}
 	}
 
 	/**
@@ -56,6 +56,11 @@ public class ClientPhysique extends Client {
 	 */
 	public void ajoutCompte(CompteBancaire compte) {
 		super.ajoutCompte(compte);
+		compte.addProprietaires(this);
+		if(age <18 && tuteur != null) {
+			tuteur.ajoutCompte(compte);
+			compte.addProprietaires(tuteur);
+		}
 	}
 	
 	public void EtatSuiv() {
@@ -65,9 +70,11 @@ public class ClientPhysique extends Client {
 		}
 	}
 	
-	public boolean equals(ClientPhysique cp){
-		if (this.nom==cp.nom)
-			return true;
-		else return false;
-	}
+//	@Override
+//	public boolean equals(Object o){
+//		ClientPhysique cp = (ClientPhysique) o;
+//		if (this.nom==cp.nom)
+//			return true;
+//		else return false;
+//	}
 }

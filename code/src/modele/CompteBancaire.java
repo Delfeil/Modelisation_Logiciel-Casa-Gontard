@@ -103,6 +103,9 @@ public class CompteBancaire {
 		this.debitMax = debitMax;
 		this.montantDecouverMax = montantDecouverMax;
 		this.carteBancaire = carteBancaire;
+		this.memento = new ArrayList<Memento>();
+		this.paiements = new ArrayList<Paiement>();
+		this.proprietaires = new ArrayList<Client>();
 	}
 	
 	public void ajoutArgent(Float montant) {

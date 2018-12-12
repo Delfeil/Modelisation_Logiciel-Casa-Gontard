@@ -31,6 +31,7 @@ public class ClientMoral extends Client {
 	public ClientMoral(String nom, String adressePost, String adressMail, String numTel, String numSiret) {
 		super(nom, adressePost, adressMail, numTel);
 		this.numSiret = numSiret;
+		respondables = new ArrayList<ClientPhysique>();
 	}
 
 	/**
@@ -41,9 +42,11 @@ public class ClientMoral extends Client {
 		super.ajoutCompte(compte);
 	}
 	
-	public boolean equals(ClientMoral cm){
-		if (this.nom==cm.nom && this.numSiret==cm.numSiret)
-			return true;
-		else return false;
-	}
+//	@Override
+//	public boolean equals(Object o){
+//		ClientMoral cm = (ClientMoral) o;
+//		if (this.nom==cm.nom && this.numSiret==cm.numSiret)
+//			return true;
+//		else return false;
+//	}
 }

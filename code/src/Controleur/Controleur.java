@@ -15,16 +15,24 @@ public class Controleur {
 	public void scenario() {
 		while(true) {
 			if(clientCourant == null) {
-				c.Afficher("Que voulez-vous faire?: 'créer Client',  'Se connecter avec un client' ou 'Quitter'");
+				c.Afficher("Que voulez-vous faire?: 'créer Client',  'Se connecter avec un client', 'afficher les clients' ou 'Quitter'");
 				String choix = c.saisie();
 				switch (choix) {
 					case "créer Client":
 						crerClient();
 						break;
 					case "Se connecter avec un client":
+						if(b.getClients().size() == 0) {
+							c.Afficher("Aucun client crées");
+							break;
+						}
+						connectClient();
 						break;
 					case "Quitter":
 						return;
+					case "afficher les clients":
+						afficheTable(b.getClients());
+						break;
 					default:
 						c.Afficher("Erreur de saisie");
 						break;
@@ -33,8 +41,51 @@ public class Controleur {
 		}
 	}
 	
+	private void connectClient() {
+		c.Afficher("Saisissez le nom du client");
+		String choix = c.saisie();
+		ClientFactory cf = new ClientPhysiqueFactory();
+		Client tmpClientPhysique = cf.createClient(choix, null, null, null);
+		
+		ArrayList<Client> listeClients = b.getClients();
+		afficheTable(listeClients);
+		int index;
+		if(listeClients != null && listeClients.size()>0) {
+			index = listeClients.indexOf(tmpClientPhysique);
+		} else {
+			index = -1;
+		}
+		Client client = null;
+		if(index==-1) {
+			c.Afficher("erreur client non présent");
+			return;
+		}
+		client = listeClients.get(index);
+		this.clientCourant = client;
+		if(client instanceof ClientPhysique) {
+			c.Afficher("Client physique");
+		} else if(client instanceof ClientMoral) {
+			c.Afficher("Client Moral");
+		} else {
+			c.Afficher("Client, " + client.getClass());
+		}
+		clientConnected();
+	}
+
+	private void clientConnected() {
+		c.Afficher("Que voulez-vous faire?: 'créer un compte',  'afficher infos client', 'déconnexion'");
+		String choix = c.saisie();
+	}
+
 	public void notifier(String s) {
 		c.Afficher(s);
+	}
+	
+	public void afficheTable(ArrayList<Client> tc) {
+		for(int i=0; i< tc.size(); i++) {
+			c.Afficher(tc.get(i).getNom());
+			c.Afficher("-------");
+		}
 	}
 	
 	public Client crerClient() {
@@ -42,7 +93,7 @@ public class Controleur {
 		while(!termine) {
 			c.Afficher("Quel type de client voulez-vous créer?: 'moral' ou 'physique'");
 			String choix = c.saisie();
-			if(choix == "moral" || choix == "physique") {
+			if(choix.equals("moral") || choix.equals("physique")) {
 				c.Afficher("Veuillez Saisir le nom du client");
 				String nom = c.saisie();
 				c.Afficher("Veuillez Saisir l'adresse du client");
@@ -66,8 +117,18 @@ public class Controleur {
 							String nomResp = c.saisie();
 							ClientFactory cf = new ClientPhysiqueFactory();
 							Client tmpClientPhysique = cf.createClient(nomResp, null, null, null);
+							
 							ArrayList<Client> listeClients = b.getClients();
-							int index = listeClients.indexOf(tmpClientPhysique);
+							afficheTable(listeClients);
+							int index;
+							if(listeClients != null && listeClients.size()>0) {
+								System.out.println("ICI");
+								index = listeClients.indexOf(tmpClientPhysique);
+								
+							} else {
+								index = -1;
+							}
+							System.out.println("là");
 							Client resp = null;
 							if(index!=-1) {
 								resp = listeClients.get(index);
@@ -137,7 +198,7 @@ public class Controleur {
 						} else {
 							c.Afficher("Voulez vous ajouter un tuteur");
 							String choixTut18 = c.saisie();
-							if(choixTut18 == "oui") {
+							if(choixTut18.equals("oui")) {
 								boolean finTuteur = false;
 								
 								while(!finTuteur) {

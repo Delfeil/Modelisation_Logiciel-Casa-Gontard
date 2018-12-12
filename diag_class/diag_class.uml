@@ -392,4 +392,51 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__64zdP2OEeitNo1Ek6M7Fg" value="*"/>
     </ownedEnd>
   </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_ArhEEP4cEeiNbPYQuBlimA" name="Controleur">
+    <packagedElement xmi:type="uml:Class" xmi:id="_B_sowP4cEeiNbPYQuBlimA" name="Controleur">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_DdsQwf4cEeiNbPYQuBlimA" name="banque" type="_75urIP2OEeitNo1Ek6M7Fg" association="_DdjG0P4cEeiNbPYQuBlimA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DdsQwv4cEeiNbPYQuBlimA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DdsQw_4cEeiNbPYQuBlimA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JcPS0P4cEeiNbPYQuBlimA" name="console" type="_G5lI0P4cEeiNbPYQuBlimA" association="_Jb8X4P4cEeiNbPYQuBlimA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JcPS0f4cEeiNbPYQuBlimA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JcPS0v4cEeiNbPYQuBlimA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Pa7pY_4dEeiNbPYQuBlimA" name="client" type="_6GessO2nEeiTsoQB8G7nfg" association="_Pa7pYP4dEeiNbPYQuBlimA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Pa7pZP4dEeiNbPYQuBlimA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Pa7pZf4dEeiNbPYQuBlimA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_TbQrQv4dEeiNbPYQuBlimA" name="comptebanquaire" type="_tmPQgO2tEeiTsoQB8G7nfg" association="_TbHhUP4dEeiNbPYQuBlimA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TbQrQ_4dEeiNbPYQuBlimA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TbQrRP4dEeiNbPYQuBlimA" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_DdjG0P4cEeiNbPYQuBlimA" memberEnd="_DdsQwf4cEeiNbPYQuBlimA _DdsQxP4cEeiNbPYQuBlimA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DdjG0f4cEeiNbPYQuBlimA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DdsQwP4cEeiNbPYQuBlimA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_DdsQxP4cEeiNbPYQuBlimA" name="controleur" type="_B_sowP4cEeiNbPYQuBlimA" association="_DdjG0P4cEeiNbPYQuBlimA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_F5HxYP4cEeiNbPYQuBlimA" name="Vue">
+    <packagedElement xmi:type="uml:Class" xmi:id="_G5lI0P4cEeiNbPYQuBlimA" name="Console"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Jb8X4P4cEeiNbPYQuBlimA" memberEnd="_JcPS0P4cEeiNbPYQuBlimA _JcPS0_4cEeiNbPYQuBlimA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Jb8X4f4cEeiNbPYQuBlimA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_JcOrwP4cEeiNbPYQuBlimA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_JcPS0_4cEeiNbPYQuBlimA" name="controleur" type="_B_sowP4cEeiNbPYQuBlimA" association="_Jb8X4P4cEeiNbPYQuBlimA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Pa7pYP4dEeiNbPYQuBlimA" memberEnd="_Pa7pY_4dEeiNbPYQuBlimA _Pa7pZv4dEeiNbPYQuBlimA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Pa7pYf4dEeiNbPYQuBlimA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Pa7pYv4dEeiNbPYQuBlimA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Pa7pZv4dEeiNbPYQuBlimA" name="controleur" type="_B_sowP4cEeiNbPYQuBlimA" association="_Pa7pYP4dEeiNbPYQuBlimA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_TbHhUP4dEeiNbPYQuBlimA" memberEnd="_TbQrQv4dEeiNbPYQuBlimA _TbQrRf4dEeiNbPYQuBlimA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TbQrQP4dEeiNbPYQuBlimA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TbQrQf4dEeiNbPYQuBlimA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_TbQrRf4dEeiNbPYQuBlimA" name="controleur" type="_B_sowP4cEeiNbPYQuBlimA" association="_TbHhUP4dEeiNbPYQuBlimA"/>
+  </packagedElement>
 </uml:Model>
