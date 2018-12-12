@@ -28,6 +28,7 @@ public abstract class Client {
 		this.adressePost = adressePost;
 		this.adressMail = adressMail;
 		this.numTel = numTel;
+		this.comptesBancaire = new ArrayList<CompteBancaire>();
 	}
 	
 	public String getNom() {

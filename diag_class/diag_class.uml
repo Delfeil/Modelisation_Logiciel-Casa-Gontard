@@ -112,19 +112,135 @@
     <ownedEnd xmi:type="uml:Property" xmi:id="_EirFIu2wEeiTsoQB8G7nfg" name="clientmoral" type="_G1TEgO2vEeiTsoQB8G7nfg" association="_Eip3AO2wEeiTsoQB8G7nfg"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_ZXNOkO2xEeiTsoQB8G7nfg" name="Etat" isAbstract="true">
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_7TCa4O2xEeiTsoQB8G7nfg" name="retirer"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_7TCa4O2xEeiTsoQB8G7nfg" name="retirer">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_6tphAP4nEeiNbPYQuBlimA" name="montant">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_827hsP4nEeiNbPYQuBlimA" name="returnMontant" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_DhG6sP4oEeiNbPYQuBlimA" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_GuZ9IP4oEeiNbPYQuBlimA" name="consulterSolde">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_LF6v8P4oEeiNbPYQuBlimA" name="solde" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Mcx1MP4oEeiNbPYQuBlimA" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_M9sJ4P4oEeiNbPYQuBlimA" name="ajoutArgent">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Qn4jsP4oEeiNbPYQuBlimA" name="montant">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_SEBKgP4oEeiNbPYQuBlimA" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_XoXj4P4oEeiNbPYQuBlimA" name="definirMontantMax">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_az32kP4oEeiNbPYQuBlimA" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_c8cFkP4oEeiNbPYQuBlimA" name="montant">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_fj0-kP4oEeiNbPYQuBlimA" name="etatSuiv">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_k0EJIP4oEeiNbPYQuBlimA" name="etat" type="_ZXNOkO2xEeiTsoQB8G7nfg" direction="return"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_mZDe0O2yEeiTsoQB8G7nfg" name="moins10Ans">
     <generalization xmi:type="uml:Generalization" xmi:id="_6BYJQO2yEeiTsoQB8G7nfg" general="_ZXNOkO2xEeiTsoQB8G7nfg"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_6DSYUO2zEeiTsoQB8G7nfg" name="retirer"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_pIdWgP4oEeiNbPYQuBlimA" name="etatSuiv">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pIdWgf4oEeiNbPYQuBlimA" name="etat" type="_ZXNOkO2xEeiTsoQB8G7nfg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_pIgZ0P4oEeiNbPYQuBlimA" name="ajoutArgent">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pIgZ0f4oEeiNbPYQuBlimA" name="montant">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pIgZ0v4oEeiNbPYQuBlimA" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_pIhn8P4oEeiNbPYQuBlimA" name="definirMontantMax">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pIhn8f4oEeiNbPYQuBlimA" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pIhn8v4oEeiNbPYQuBlimA" name="montant">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_pIkEMP4oEeiNbPYQuBlimA" name="consulterSolde">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pIkEMf4oEeiNbPYQuBlimA" name="solde" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pIkEMv4oEeiNbPYQuBlimA" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_pImgcP4oEeiNbPYQuBlimA" name="retirer">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pImgcf4oEeiNbPYQuBlimA" name="montant">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pImgcv4oEeiNbPYQuBlimA" name="returnMontant" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pImgc_4oEeiNbPYQuBlimA" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_rVe8kO2yEeiTsoQB8G7nfg" name="entre10Et18Ans">
     <generalization xmi:type="uml:Generalization" xmi:id="_2sxk8O2yEeiTsoQB8G7nfg" general="_ZXNOkO2xEeiTsoQB8G7nfg"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_7zoUkO2zEeiTsoQB8G7nfg" name="retirer"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_pSy-QP4oEeiNbPYQuBlimA" name="etatSuiv">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pSy-Qf4oEeiNbPYQuBlimA" name="etat" type="_ZXNOkO2xEeiTsoQB8G7nfg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_pS0MYP4oEeiNbPYQuBlimA" name="consulterSolde">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pS0MYf4oEeiNbPYQuBlimA" name="solde" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pS0MYv4oEeiNbPYQuBlimA" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_pS0MY_4oEeiNbPYQuBlimA" name="retirer">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pS0MZP4oEeiNbPYQuBlimA" name="montant">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pS0MZf4oEeiNbPYQuBlimA" name="returnMontant" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pS0MZv4oEeiNbPYQuBlimA" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_pS32wP4oEeiNbPYQuBlimA" name="ajoutArgent">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pS32wf4oEeiNbPYQuBlimA" name="montant">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pS32wv4oEeiNbPYQuBlimA" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_pS5r8P4oEeiNbPYQuBlimA" name="definirMontantMax">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pS5r8f4oEeiNbPYQuBlimA" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pS5r8v4oEeiNbPYQuBlimA" name="montant">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_zFxpEO2yEeiTsoQB8G7nfg" name="plus18">
     <generalization xmi:type="uml:Generalization" xmi:id="_4BU9EO2yEeiTsoQB8G7nfg" general="_ZXNOkO2xEeiTsoQB8G7nfg"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_-APWEO2zEeiTsoQB8G7nfg" name="retirer"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_mCKT8P4oEeiNbPYQuBlimA" name="etatSuiv">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_mCKT8f4oEeiNbPYQuBlimA" name="etat" type="_ZXNOkO2xEeiTsoQB8G7nfg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_mCLiEP4oEeiNbPYQuBlimA" name="definirMontantMax">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_mCLiEf4oEeiNbPYQuBlimA" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_mCLiEv4oEeiNbPYQuBlimA" name="montant">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_mCLiE_4oEeiNbPYQuBlimA" name="consulterSolde">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_mCLiFP4oEeiNbPYQuBlimA" name="solde" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_mCLiFf4oEeiNbPYQuBlimA" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_mCPMcP4oEeiNbPYQuBlimA" name="retirer">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_mCPMcf4oEeiNbPYQuBlimA" name="montant">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_mCPMcv4oEeiNbPYQuBlimA" name="returnMontant" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_mCPMc_4oEeiNbPYQuBlimA" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_mCPMdP4oEeiNbPYQuBlimA" name="ajoutArgent">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_mCPMdf4oEeiNbPYQuBlimA" name="montant">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_mCPMdv4oEeiNbPYQuBlimA" name="compte" type="_tmPQgO2tEeiTsoQB8G7nfg"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_ADXg4O2zEeiTsoQB8G7nfg" visibility="protected" memberEnd="_ADXg4-2zEeiTsoQB8G7nfg _ADgDwu2zEeiTsoQB8G7nfg">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ADXg4e2zEeiTsoQB8G7nfg" source="org.eclipse.papyrus">
@@ -287,10 +403,6 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_Uz5q8Pp0EeibBvhereyb1Q" name="solde" visibility="protected">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EFloat"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_WXwDUvp0EeibBvhereyb1Q" name="memento" type="_uYSgoPpzEeibBvhereyb1Q" association="_WXu1MPp0EeibBvhereyb1Q">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WXwqYPp0EeibBvhereyb1Q"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WXwqYfp0EeibBvhereyb1Q" value="1"/>
-    </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_lv6bwPzHEeiBmdudI7XRZQ" name="saveState"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_olcecPzHEeiBmdudI7XRZQ" name="getState">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_olcecfzHEeiBmdudI7XRZQ" name="etat" type="_uYSgoPpzEeibBvhereyb1Q" direction="return"/>
@@ -301,12 +413,6 @@
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ypKf8fpzEeibBvhereyb1Q" key="nature" value="UML_Nature"/>
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_ypMVIfpzEeibBvhereyb1Q" name="client" type="_tmPQgO2tEeiTsoQB8G7nfg" association="_ypJR0PpzEeibBvhereyb1Q"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_WXu1MPp0EeibBvhereyb1Q" memberEnd="_WXwDUvp0EeibBvhereyb1Q _WXwqYvp0EeibBvhereyb1Q">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WXwDUPp0EeibBvhereyb1Q" source="org.eclipse.papyrus">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WXwDUfp0EeibBvhereyb1Q" key="nature" value="UML_Nature"/>
-    </eAnnotations>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_WXwqYvp0EeibBvhereyb1Q" name="memento" type="_uYSgoPpzEeibBvhereyb1Q" association="_WXu1MPp0EeibBvhereyb1Q"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_nt8doPp1EeibBvhereyb1Q" name="Paiement">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_2J6X8Pp1EeibBvhereyb1Q" name="montant" visibility="private">
@@ -411,6 +517,9 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TbQrRP4dEeiNbPYQuBlimA" value="1"/>
       </ownedAttribute>
     </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_KBpaEP4pEeiNbPYQuBlimA" client="_B_sowP4cEeiNbPYQuBlimA" supplier="_v3F5EPu0Eei1rrQhfo0g1A"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_gx_lYP4pEeiNbPYQuBlimA" client="_B_sowP4cEeiNbPYQuBlimA" supplier="_-WKTkPpoEeibBvhereyb1Q"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_rkp2sP4pEeiNbPYQuBlimA" client="_B_sowP4cEeiNbPYQuBlimA" supplier="_tCrtMPuzEei1rrQhfo0g1A"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_DdjG0P4cEeiNbPYQuBlimA" memberEnd="_DdsQwf4cEeiNbPYQuBlimA _DdsQxP4cEeiNbPYQuBlimA">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DdjG0f4cEeiNbPYQuBlimA" source="org.eclipse.papyrus">

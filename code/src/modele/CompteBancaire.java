@@ -163,7 +163,9 @@ public class CompteBancaire {
 		this.paiements.add(new Paiement(montant, pays));
 	}
 	
-	public boolean equals(CompteBancaire cb){
+	@Override
+	public boolean equals(Object o){
+		CompteBancaire cb = (CompteBancaire) o;
 		if (this.numCompte==cb.numCompte)
 			return true;
 		else return false;

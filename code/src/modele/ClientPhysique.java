@@ -52,7 +52,9 @@ public class ClientPhysique extends Client {
 
 	/**
 	 * 
-	 * @param compte 
+	 * Ajouter un compte à un client moral
+	 * Si celui-ci a un tuteur, on ajoute le compte au tuteur
+	 * On ajoute le client et son tuteur (si il en a un) comme prorpiétaires du compte bancaire
 	 */
 	public void ajoutCompte(CompteBancaire compte) {
 		super.ajoutCompte(compte);
