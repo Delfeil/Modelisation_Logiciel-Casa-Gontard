@@ -6,7 +6,7 @@ package modele;
 
 /************************************************************/
 /**
- * 
+ * Gère le remboursement pour le réseau visa
  */
 public abstract class RemboursementVisa {
 	

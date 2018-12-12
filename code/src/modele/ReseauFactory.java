@@ -10,6 +10,9 @@ package modele;
  */
 public class ReseauFactory {
 	
+	/**
+	 * Selon le type de réseau attendue, crée et retourne un objet Resau différent
+	 */
 	public Reseau crerReseau(String r) {
 		if(r == "Visa") {
 			return new ReseauVisa();

@@ -2,7 +2,7 @@ package modele;
 
 public abstract class Etat {
 	/**
-	 * 
+	 * Représente les différentes intéractions plus ou moins controlées qu'un client physique a le droit ou pas de faire 
 	 */
 	public abstract Float retrait(Float montant, CompteBancaire compte);
 	public abstract Float consulterSolde(CompteBancaire compte);

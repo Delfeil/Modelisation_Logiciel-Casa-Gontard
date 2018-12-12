@@ -2,10 +2,13 @@ package modele;
 
 import java.util.ArrayList;
 
+/**
+ * 
+ * Compte bancaire
+ *
+ */
 public class CompteBancaire {
-	/**
-	 * 
-	 */
+	
 	private int numCompte;
 	
 	public int getNumCompte() {
@@ -15,22 +18,20 @@ public class CompteBancaire {
 	public void setNumCompte(int num) {
 		this.numCompte = num;
 	}
-	/**
-	 * 
-	 */
+	
 	private Float solde;
 	
 	public void setSolde(Float solde) {
 		this.solde = solde;
 	}
 	
+	/**
+	 * Correspond à getSolde
+	 */
 	public Float consulterSolde() {
-		//Correspond à getSolde
 		return solde;
 	}
-	/**
-	 * 
-	 */
+	
 	private Float debitMax;
 	
 	public Float getDebitMax() {
@@ -40,9 +41,7 @@ public class CompteBancaire {
 	public void setDebitMax(Float debit) {
 		this.debitMax = debit;
 	}
-	/**
-	 * 
-	 */
+	
 	private Float montantDecouverMax;
 	
 	public Float getMontantDecouverMax() {
@@ -52,9 +51,6 @@ public class CompteBancaire {
 	public void setmontantDecouverMax(Float montant) {
 		this.montantDecouverMax = montant;
 	}
-	/**
-	 * 
-	 */
 	
 	private ArrayList<Client> proprietaires;
 	
@@ -66,6 +62,9 @@ public class CompteBancaire {
 		proprietaires.add(c);
 	}
 	
+	/**
+	 * Permet de savoir si un client est propriétaire du compte
+	 */
 	public boolean clientPresent(Client c) {
 		for(int i=0; i<proprietaires.size(); i++) {
 			if(c.getNom() == proprietaires.get(i).getNom()) {
@@ -81,6 +80,9 @@ public class CompteBancaire {
 		return this.carteBancaire;
 	}
 	
+	/**
+	 * Permet d'attribuer à un compte une carte bancaire, et de la créer par la même ocasion, nécessite de choisir au préalable un réseau 
+	 */
 	public void setCarteBancaire(String type, Reseau r, Client c) {
 		CarteFactory cf= new CarteFactory();
 		
@@ -90,9 +92,7 @@ public class CompteBancaire {
 			carteBancaire = null;
 		}
 	}
-	/**
-	 * 
-	 */
+	
 	private ArrayList<Memento> memento;
 	
 	private ArrayList<Paiement> paiements;
@@ -114,8 +114,7 @@ public class CompteBancaire {
 	}
 
 	/**
-	 * 
-	 * @param montant 
+	 * Permet de retirer de l'argent, en vérifiant que celà est possible
 	 */
 	public float retrait(Float montant) {
 		if(retirable(montant)) {
@@ -128,6 +127,9 @@ public class CompteBancaire {
 		}
 	}
 	
+	/**
+	 * Permet de vérifier si il est possible de retirer un certain montant
+	 */
 	public Boolean retirable(Float montant) {
 		if((debitMax != null) && (montant > debitMax)) {
 			return false;
@@ -139,15 +141,14 @@ public class CompteBancaire {
 	}	
 
 	/**
-	 * 
+	 * Sauvegarde de l'état d'un compte dans le memento
 	 */
 	public void saveState() {
 		memento.add(new Memento(solde));
 	}
 
 	/**
-	 * 
-	 * @return 
+	 * Permet de rétablir le dernier état
 	 */
 	public void getState() {
 		if(memento.size()>0) {
@@ -159,10 +160,16 @@ public class CompteBancaire {
 		}
 	}
 	
+	/**
+	 * Permet d'ajouter un paiement
+	 */
 	public void ajoutPaiement(Float montant, String pays) {
 		this.paiements.add(new Paiement(montant, pays));
 	}
 	
+	/**
+	 * Surdéfinition de la méthode equals
+	 */
 	@Override
 	public boolean equals(Object o){
 		CompteBancaire cb = (CompteBancaire) o;

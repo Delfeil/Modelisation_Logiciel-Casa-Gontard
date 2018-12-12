@@ -1,6 +1,7 @@
 package modele;
 
 public class Sup18 extends Etat {
+	// pratiquement tous les droits sont accordés aux clients majeurs
 
 	public Float retrait(Float montant, CompteBancaire compte) {
 		return compte.retrait(montant);

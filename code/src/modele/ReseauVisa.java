@@ -7,8 +7,8 @@ public class ReseauVisa extends Reseau {
 	}
 
 	/**
-	 * 
-	 * @return 
+	 * Celon le pays ou a été fait le paiement, 
+	 * utilisation de l'objet RemboursementVisa correspondant pour effectuer le remboursement
 	 */
 	public Float Remboursement(Paiement p, CompteBancaire c) {
 		RemboursementVisa rV;

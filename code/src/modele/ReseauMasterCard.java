@@ -7,8 +7,7 @@ public class ReseauMasterCard extends Reseau {
 	}
 
 	/**
-	 * 
-	 * @return 
+	 * Si remboursement avec le réseau MasterCard: remboursement total
 	 */
 	public Float Remboursement(Paiement p, CompteBancaire c) {
 		c.ajoutArgent(p.getMontant());

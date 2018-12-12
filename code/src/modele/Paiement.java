@@ -1,5 +1,10 @@
 package modele;
 
+/**
+ * 
+ * Permet de stocker les informations sur les paiements réalisés
+ *
+ */
 public class Paiement {
 	private Float montant;
 	private String pays;
