@@ -73,8 +73,34 @@ public class Controleur {
 	}
 
 	private void clientConnected() {
-		c.Afficher("Que voulez-vous faire?: 'créer un compte',  'afficher infos client', 'déconnexion'");
-		String choix = c.saisie();
+		boolean clientConnected =true;
+		while(clientConnected) {
+			c.Afficher("Que voulez-vous faire?: 'créer un compte', 'se connecter à un compte',  'afficher infos client', 'déconnexion'");
+			String choix = c.saisie();
+			switch (choix) {
+				case "créer un compte":
+					crerCompte();
+					break;
+				case "afficher infos client":
+					if(b.getClients().size() == 0) {
+						c.Afficher("Aucun client créé");
+						break;
+					}
+					connectClient();
+					break;
+				case "déconnexion":
+					this.clientCourant = null;
+					return;
+				default:
+					c.Afficher("Erreur de saisie");
+					break;
+			}
+		}
+	}
+
+	private void crerCompte() {
+		c.Afficher("Combien d'argent voulez-vous y mettre");
+		float choixSolde = c.saisieInt();
 	}
 
 	public void notifier(String s) {
@@ -94,17 +120,17 @@ public class Controleur {
 			c.Afficher("Quel type de client voulez-vous créer?: 'moral' ou 'physique'");
 			String choix = c.saisie();
 			if(choix.equals("moral") || choix.equals("physique")) {
-				c.Afficher("Veuillez Saisir le nom du client");
+				c.Afficher("Veuillez saisir le nom du client");
 				String nom = c.saisie();
-				c.Afficher("Veuillez Saisir l'adresse du client");
+				c.Afficher("Veuillez saisir l'adresse du client");
 				String adresse = c.saisie();
-				c.Afficher("Veuillez Saisir le mail du client");
+				c.Afficher("Veuillez saisir le mail du client");
 				String mail = c.saisie();
-				c.Afficher("Veuillez Saisir le numerot de téléphode du client");
+				c.Afficher("Veuillez saisir le numéro de téléphone du client");
 				String numTel = c.saisie();
 				switch (choix) {
 					case "moral":
-						c.Afficher("Veuillez Saisir le numérot SIRET");
+						c.Afficher("Veuillez saisir le numéro SIRET");
 						String siret = c.saisie();
 						ClientFactory cmf = new ClientMoralFactory();
 						Client clientTmp = cmf.createClient(nom, adresse, mail, numTel);
@@ -113,30 +139,27 @@ public class Controleur {
 						boolean finResponsable = false;
 						
 						while(!finResponsable) {
-							c.Afficher("Veuillez Saisir le nom du client responsable");
+							c.Afficher("Veuillez saisir le nom du client responsable");
 							String nomResp = c.saisie();
 							ClientFactory cf = new ClientPhysiqueFactory();
 							Client tmpClientPhysique = cf.createClient(nomResp, null, null, null);
 							
 							ArrayList<Client> listeClients = b.getClients();
-							afficheTable(listeClients);
 							int index;
 							if(listeClients != null && listeClients.size()>0) {
-								System.out.println("ICI");
 								index = listeClients.indexOf(tmpClientPhysique);
 								
 							} else {
 								index = -1;
 							}
-							System.out.println("là");
 							Client resp = null;
 							if(index!=-1) {
 								resp = listeClients.get(index);
 							} else {
-								c.Afficher("Voulez-vous choisir un autre responsable, ou créer un compte? 'creer', 'autre responsable'");
+								c.Afficher("Voulez-vous choisir un autre responsable, ou créer un client? 'créer', 'autre responsable'");
 								String choixResp = c.saisie();
 								switch(choixResp) {
-									case "creer":
+									case "créer":
 										resp = crerClient();
 										break;
 									case "autre responsable":
@@ -161,7 +184,7 @@ public class Controleur {
 						}
 						return clientTmp;
 					case "physique":
-						c.Afficher("Veuillez Saisir l'age du client");
+						c.Afficher("Veuillez saisir l'âge du client");
 						int age = c.saisieInt();
 						ClientFactory cff = new ClientPhysiqueFactory();
 						Client clientPhysiqueTmp = ((ClientPhysiqueFactory)cff).createClient(nom, adresse, mail, numTel);
@@ -170,7 +193,7 @@ public class Controleur {
 							boolean finTuteur = false;
 							
 							while(!finTuteur) {
-								c.Afficher("Veuillez Saisir le nom du client tuteur");
+								c.Afficher("Veuillez saisir le nom du client tuteur");
 								String nomTut = c.saisie();
 								ClientFactory cf = new ClientPhysiqueFactory();
 								Client tmpClientPhysique = cf.createClient(nomTut, null, null, null);
@@ -180,10 +203,10 @@ public class Controleur {
 								if(index!=-1) {
 									tut = listeClients.get(index);
 								} else {
-									c.Afficher("Voulez-vous choisir un autre tuteur, ou créer un compte? 'creer', 'autre tuteur'");
+									c.Afficher("Voulez-vous choisir un autre tuteur, ou créer un client? 'créer', 'autre tuteur'");
 									String choixTut = c.saisie();
 									switch(choixTut) {
-										case "creer":
+										case "créer":
 											tut = crerClient();
 											break;
 										case "autre tuteur":
@@ -202,7 +225,7 @@ public class Controleur {
 								boolean finTuteur = false;
 								
 								while(!finTuteur) {
-									c.Afficher("Veuillez Saisir le nom du client tuteur");
+									c.Afficher("Veuillez saisir le nom du client tuteur");
 									String nomTut = c.saisie();
 									ClientFactory cf = new ClientPhysiqueFactory();
 									Client tmpClientPhysique = cf.createClient(nomTut, null, null, null);
@@ -212,10 +235,10 @@ public class Controleur {
 									if(index!=-1) {
 										tut = listeClients.get(index);
 									} else {
-										c.Afficher("Voulez-vous choisir un autre tuteur, ou créer un compte? 'creer', 'autre tuteur'");
+										c.Afficher("Voulez-vous choisir un autre tuteur, ou créer un client? 'créer', 'autre tuteur'");
 										String choixTut = c.saisie();
 										switch(choixTut) {
-											case "creer":
+											case "créer":
 												tut = crerClient();
 												break;
 											case "autre tuteur":
